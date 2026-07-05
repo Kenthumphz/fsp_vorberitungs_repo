@@ -3,6 +3,7 @@
 
 const STORAGE_KEY = "fspTrainerState";
 const PASS_THRESHOLD = 0.6; // lesson counts as "completed" at 60% correct
+const WEEKDAY_LABELS = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
 
 const PARTS = [
   { key: "anamnese", label: "Anamnesegespräch", subtitle: "Arzt-Patienten-Gespräch", icon: "🩺" },
@@ -16,9 +17,11 @@ let session = null; // active lesson session, see startLesson()
 function loadState() {
   const raw = localStorage.getItem(STORAGE_KEY);
   if (!raw) {
-    return { streak: 0, lastPracticeDate: null, totalXP: 0, lessonScores: {} };
+    return { streak: 0, lastPracticeDate: null, totalXP: 0, lessonScores: {}, history: [] };
   }
-  return JSON.parse(raw);
+  const parsed = JSON.parse(raw);
+  if (!parsed.history) parsed.history = [];
+  return parsed;
 }
 
 function saveState() {
@@ -31,6 +34,7 @@ function todayKey() {
 
 function registerPracticeToday() {
   const today = todayKey();
+  if (!state.history.includes(today)) state.history.push(today);
   if (state.lastPracticeDate === today) return;
 
   const yesterday = new Date(Date.now() - 86400000).toDateString();
@@ -48,50 +52,119 @@ function isLessonUnlocked(partKey, index) {
   return (state.lessonScores[prev.id] ?? 0) >= PASS_THRESHOLD;
 }
 
+function completedLessonCount() {
+  return LESSONS.filter((l) => (state.lessonScores[l.id] ?? 0) >= PASS_THRESHOLD).length;
+}
+
+// ---------------------------------------------------------------------
+// Stats: sidebar streak, progress ring, week strip, lesson progress bar
+// ---------------------------------------------------------------------
+
+function currentWeekDates() {
+  const today = new Date();
+  const day = today.getDay(); // 0 = Sunday ... 6 = Saturday
+  const mondayOffset = day === 0 ? -6 : 1 - day;
+  const monday = new Date(today);
+  monday.setDate(today.getDate() + mondayOffset);
+
+  const dates = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    dates.push(d);
+  }
+  return dates;
+}
+
+function renderStats() {
+  document.getElementById("sidebar-streak").textContent = state.streak;
+  document.getElementById("sidebar-streak-label").textContent = state.streak === 1 ? "Tag in Folge" : "Tage in Folge";
+  document.getElementById("streak-count-big").textContent = state.streak;
+
+  const total = LESSONS.length;
+  const done = completedLessonCount();
+  const pct = total === 0 ? 0 : Math.round((done / total) * 100);
+
+  document.getElementById("progress-pct").textContent = `${pct}%`;
+  document.getElementById("lessons-done-count").textContent = done;
+  document.getElementById("lessons-total-count").textContent = total;
+  document.getElementById("lessons-bar-fill").style.width = `${total === 0 ? 0 : (done / total) * 100}%`;
+
+  const circumference = 2 * Math.PI * 42;
+  const ringFg = document.getElementById("ring-fg");
+  ringFg.style.strokeDasharray = `${circumference}`;
+  ringFg.style.strokeDashoffset = `${circumference * (1 - pct / 100)}`;
+
+  const today = todayKey();
+  const weekRow = document.getElementById("week-row");
+  weekRow.innerHTML = "";
+  currentWeekDates().forEach((date, i) => {
+    const practiced = state.history.includes(date.toDateString());
+    const isToday = date.toDateString() === today;
+    const cell = document.createElement("div");
+    cell.className = "week-day" + (practiced ? " practiced" : "") + (isToday ? " is-today" : "");
+    cell.innerHTML = `<span class="week-flame">🔥</span><span class="week-label">${WEEKDAY_LABELS[i]}</span>`;
+    weekRow.appendChild(cell);
+  });
+}
+
 // ---------------------------------------------------------------------
 // Rendering: map (home) view
 // ---------------------------------------------------------------------
 
-function renderHeader() {
-  document.getElementById("streak-count").textContent = state.streak;
-  document.getElementById("xp-count").textContent = state.totalXP;
+function waveOffset(index) {
+  const m = index % 4;
+  return m <= 2 ? m : 4 - m;
 }
 
 function renderMap() {
-  renderHeader();
+  renderStats();
   const root = document.getElementById("map-view");
   root.innerHTML = "";
 
   PARTS.forEach((part) => {
     const section = document.createElement("section");
     section.className = "part-section";
+    section.id = `part-${part.key}`;
 
-    const header = document.createElement("div");
-    header.className = "part-header";
-    header.innerHTML = `<span class="part-icon">${part.icon}</span>
-      <div><h2>${part.label}</h2><p>${part.subtitle}</p></div>`;
-    section.appendChild(header);
+    const pill = document.createElement("div");
+    pill.className = "module-pill";
+    pill.innerHTML = `<span class="pill-icon">${part.icon}</span> ${part.label}`;
+    section.appendChild(pill);
 
-    const nodeRow = document.createElement("div");
-    nodeRow.className = "node-row";
+    const subtitle = document.createElement("p");
+    subtitle.className = "part-subtitle";
+    subtitle.textContent = part.subtitle;
+    section.appendChild(subtitle);
+
+    const path = document.createElement("div");
+    path.className = "lesson-path";
 
     lessonsForPart(part.key).forEach((lesson, index) => {
       const unlocked = isLessonUnlocked(part.key, index);
       const score = state.lessonScores[lesson.id];
       const completed = score !== undefined && score >= PASS_THRESHOLD;
 
+      const row = document.createElement("div");
+      row.className = "path-row";
+      row.style.marginLeft = `${waveOffset(index) * 70}px`;
+
       const node = document.createElement("button");
       node.className = "lesson-node" + (completed ? " completed" : "") + (!unlocked ? " locked" : "");
       node.disabled = !unlocked;
-      node.innerHTML = `
-        <span class="node-icon">${completed ? "⭐" : unlocked ? "▶" : "🔒"}</span>
-        <span class="node-title">${lesson.title}</span>
-        <span class="node-topic">${lesson.topic}</span>`;
+      node.innerHTML = completed ? "⭐" : unlocked ? "▶" : "🔒";
       node.addEventListener("click", () => startLesson(lesson.id));
-      nodeRow.appendChild(node);
+
+      const label = document.createElement("div");
+      label.className = "path-label";
+      label.innerHTML = `<span class="node-title">${lesson.title}</span><span class="node-topic">${lesson.topic}</span>`;
+
+      row.appendChild(node);
+      row.appendChild(label);
+      path.appendChild(row);
     });
 
-    section.appendChild(nodeRow);
+    section.appendChild(path);
     root.appendChild(section);
   });
 }
@@ -293,7 +366,7 @@ function finishLesson() {
 }
 
 // ---------------------------------------------------------------------
-// View switching + init
+// View switching, sidebar nav + init
 // ---------------------------------------------------------------------
 
 function showView(viewId) {
@@ -301,4 +374,20 @@ function showView(viewId) {
   document.getElementById(viewId).classList.add("active");
 }
 
+document.querySelectorAll(".nav-item").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelectorAll(".nav-item").forEach((l) => l.classList.remove("active"));
+    link.classList.add("active");
+
+    session = null;
+    showView("map-view");
+    renderMap();
+
+    const target = document.getElementById(link.dataset.target);
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
+document.getElementById("lessons-total-count").textContent = LESSONS.length;
 renderMap();

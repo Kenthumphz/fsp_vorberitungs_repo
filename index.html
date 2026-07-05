@@ -7,18 +7,60 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>FSP Trainer</h1>
-    <div class="stats">
-      <div class="stat">🔥 <span id="streak-count">0</span></div>
-      <div class="stat">⭐ <span id="xp-count">0</span></div>
-    </div>
-  </header>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <span class="brand-icon">🩺</span>
+        <span class="brand-name">FSP Trainer</span>
+      </div>
 
-  <main>
-    <div id="map-view" class="view active"></div>
-    <div id="lesson-view" class="view"></div>
-  </main>
+      <nav class="sidebar-nav">
+        <a href="#top" class="nav-item active" data-target="top">🏠 Übersicht</a>
+        <div class="nav-section-label">FSP-Teile</div>
+        <a href="#part-anamnese" class="nav-item" data-target="part-anamnese">Anamnesegespräch</a>
+        <a href="#part-arztbrief" class="nav-item" data-target="part-arztbrief">Schriftlicher Arztbrief</a>
+        <a href="#part-fachgespraech" class="nav-item" data-target="part-fachgespraech">Fachgespräch</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>🔥 <span id="sidebar-streak">0</span> <span id="sidebar-streak-label">Tage in Folge</span></p>
+      </div>
+    </aside>
+
+    <main class="content" id="top">
+      <div id="map-view" class="view active"></div>
+      <div id="lesson-view" class="view"></div>
+    </main>
+
+    <aside class="right-panel">
+      <div class="panel-card progress-card">
+        <div class="progress-ring">
+          <svg viewBox="0 0 100 100" class="ring-svg">
+            <circle class="ring-bg" cx="50" cy="50" r="42"></circle>
+            <circle class="ring-fg" id="ring-fg" cx="50" cy="50" r="42"></circle>
+          </svg>
+          <div class="progress-ring-label">
+            <span class="ring-icon">🎓</span>
+            <span id="progress-pct">0%</span>
+          </div>
+        </div>
+        <p class="progress-course-name">FSP-Vorbereitung</p>
+      </div>
+
+      <div class="panel-card streak-card">
+        <div class="streak-count-row">
+          <span class="streak-number" id="streak-count-big">0</span>
+          <span class="streak-flame">🔥</span>
+        </div>
+        <div class="week-row" id="week-row"></div>
+        <div class="lesson-progress-bar">
+          <span id="lessons-done-count">0</span>
+          <div class="bar-track"><div class="bar-fill" id="lessons-bar-fill"></div></div>
+          <span id="lessons-total-count">0</span>
+        </div>
+      </div>
+    </aside>
+  </div>
 
   <script src="data/lessons.js"></script>
   <script src="app.js"></script>
