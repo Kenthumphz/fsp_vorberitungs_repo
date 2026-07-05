@@ -689,6 +689,310 @@ const LESSONS = [
     ]
   },
 
+  {
+    id: "an-schwindel-synkope",
+    part: "anamnese",
+    topic: "Neurologie/Kardiologie",
+    title: "Schwindel & Synkope",
+    description: "Anamnese bei Schwindel und kurzzeitiger Bewusstlosigkeit inklusive Patientenkommunikation.",
+    pool: [
+      {
+        type: "mc",
+        question: "Wie fragen Sie nach der Art des Schwindels?",
+        options: ["Ist Ihnen eher schwarz vor Augen geworden, oder hat sich die Umgebung gedreht?", "Schwindelt Ihnen oft?", "Wo wohnen Sie?", "Haben Sie Kopfschmerzen?"],
+        answerIndex: 0,
+        explanation: "Die Unterscheidung zwischen Präsynkope (Schwarzwerden) und Drehschwindel lenkt die weitere Diagnostik."
+      },
+      {
+        type: "vocab",
+        term: "der Drehschwindel",
+        definition: "vertigo — sensation that the surroundings are spinning, typically vestibular in origin",
+        example: "Dreht sich die Umgebung um Sie, oder haben Sie eher das Gefühl, gleich umzukippen?"
+      },
+      {
+        type: "cloze",
+        text: "Kam es beim Schwindel auch zu einem kurzen ___?",
+        options: ["Bewusstseinsverlust", "Hautausschlag", "Juckreiz", "Sodbrennen"],
+        answerIndex: 0,
+        explanation: "Die Unterscheidung Synkope vs. Präsynkope ist zentral für die weitere Abklärung."
+      },
+      {
+        type: "mc",
+        question: "Welche Frage prüft einen möglichen kardialen Auslöser der Synkope?",
+        options: ["Hatten Sie beim Umkippen Herzrasen oder einen unregelmäßigen Herzschlag gespürt?", "Haben Sie oft Kopfschmerzen?", "Essen Sie gerne süß?", "Reisen Sie oft?"],
+        answerIndex: 0,
+        explanation: "Palpitationen vor einer Synkope erhöhen den Verdacht auf eine kardiale (rhythmogene) Ursache."
+      },
+      {
+        type: "vocab",
+        term: "die orthostatische Hypotonie",
+        definition: "orthostatic hypotension — a drop in blood pressure upon standing, a common cause of dizziness",
+        example: "Wird Ihnen beim schnellen Aufstehen schwarz vor Augen?"
+      },
+      {
+        type: "cloze",
+        text: "Ist der Schwindel abhängig von der ___, zum Beispiel beim Drehen im Bett?",
+        options: ["Kopfposition", "Tageszeit", "Kleidung", "Ernährung"],
+        answerIndex: 0,
+        explanation: "Lagerungsabhängiger Schwindel ist typisch für den benignen paroxysmalen Lagerungsschwindel."
+      },
+      {
+        type: "mc",
+        question: "Ein 75-jähriger Patient mit plötzlicher Synkope ohne Vorwarnung und unregelmäßigem Puls. Woran denken Sie zuerst?",
+        options: ["Kardiale Synkope (Rhythmusstörung)", "Vasovagale Synkope", "Migräne", "Angststörung"],
+        answerIndex: 0,
+        explanation: "Synkope ohne Vorwarnzeichen (Prodromi) und unregelmäßiger Puls sprechen für eine kardiale, rhythmogene Ursache."
+      },
+      {
+        type: "vocab",
+        term: "die Prodromi",
+        definition: "prodromal symptoms preceding syncope (e.g. sweating, nausea) — typical for vasovagal syncope, often absent in cardiac syncope",
+        example: "Hatten Sie vor dem Umkippen Warnzeichen wie Übelkeit oder Schwitzen?"
+      },
+      {
+        type: "cloze",
+        text: "Nehmen Sie Medikamente ein, die Ihren Blutdruck ___ könnten?",
+        options: ["senken", "färben", "süßen", "wärmen"],
+        answerIndex: 0,
+        explanation: "Eine Medikamentenanamnese (z. B. Antihypertensiva) ist bei orthostatischem Schwindel wichtig."
+      },
+      {
+        type: "mc",
+        question: "Wie erklären Sie dem Patienten verständlich, warum Sie ein EKG und einen Schellong-Test durchführen möchten?",
+        options: [
+          "Wir möchten herausfinden, ob Ihr Herzrhythmus oder Ihr Blutdruck beim Aufstehen die Ursache für den Schwindel ist. Dafür machen wir ein EKG und prüfen Ihren Blutdruck im Stehen und Liegen.",
+          "Das ist nur Routine.",
+          "Sie haben sicher ein Herzproblem.",
+          "Dazu sage ich später etwas."
+        ],
+        answerIndex: 0,
+        explanation: "Der Zweck der Untersuchungen sollte dem Patienten verständlich und konkret erklärt werden."
+      },
+      {
+        type: "cloze",
+        text: "Bitte stehen Sie jetzt langsam auf, während wir Ihren ___ messen.",
+        options: ["Blutdruck", "Gewicht", "Zuckerwert", "Sehvermögen"],
+        answerIndex: 0,
+        explanation: "Die Anleitung für den Schellong-Test sollte einfach und klar formuliert sein."
+      },
+      {
+        type: "vocab",
+        term: "der Schellong-Test",
+        definition: "tilt/stand test used to diagnose orthostatic hypotension",
+        example: "Wir führen jetzt einen Schellong-Test durch, um Ihren Blutdruck im Liegen und Stehen zu vergleichen."
+      },
+      {
+        type: "mc",
+        question: "Wie prüfen Sie am Ende, ob der Patient die Ursache des Schwindels verstanden hat?",
+        options: ["Ist Ihnen klar geworden, wodurch der Schwindel wahrscheinlich ausgelöst wird? Haben Sie noch Fragen?", "Alles klar?", "Verstanden, oder?", "Kein Kommentar nötig."],
+        answerIndex: 0,
+        explanation: "Eine offene Rückfrage stellt sicher, dass der Patient die Erklärung wirklich verstanden hat."
+      }
+    ]
+  },
+  {
+    id: "an-rueckenschmerzen",
+    part: "anamnese",
+    topic: "Orthopädie",
+    title: "Rückenschmerzen",
+    description: "Anamnese bei Rückenschmerz inklusive Warnzeichen (Red Flags) und Patientenkommunikation.",
+    pool: [
+      {
+        type: "mc",
+        question: "Wie fragen Sie nach der Lokalisation der Rückenschmerzen?",
+        options: ["Schmerzt es eher im unteren Rücken, oder strahlt der Schmerz ins Bein aus?", "Haben Sie oft Rückenschmerzen?", "Wo wohnen Sie?", "Sind Sie sportlich aktiv?"],
+        answerIndex: 0,
+        explanation: "Die Unterscheidung zwischen lokalem und ausstrahlendem Schmerz ist diagnostisch wegweisend."
+      },
+      {
+        type: "vocab",
+        term: "die Ischialgie",
+        definition: "sciatica — pain radiating along the sciatic nerve, typically into the leg",
+        example: "Strahlt der Schmerz vom Rücken bis ins Bein aus (Ischialgie)?"
+      },
+      {
+        type: "cloze",
+        text: "Haben Sie zusätzlich zu den Rückenschmerzen auch ___ bemerkt?",
+        options: ["Taubheitsgefühl oder Kraftverlust im Bein", "Juckreiz am Arm", "Halsschmerzen", "Sodbrennen"],
+        answerIndex: 0,
+        explanation: "Neurologische Begleitsymptome sind wichtige Warnzeichen, die aktiv erfragt werden müssen."
+      },
+      {
+        type: "mc",
+        question: "Welche Frage prüft ein Warnzeichen (Red Flag) für ein Kaudasyndrom?",
+        options: ["Haben Sie Probleme beim Wasserlassen oder ein Taubheitsgefühl im Bereich des Gesäßes bemerkt?", "Haben Sie Rückenschmerzen beim Sitzen?", "Schlafen Sie gut?", "Sind Sie beruflich viel im Sitzen?"],
+        answerIndex: 0,
+        explanation: "Blasenstörung und Reithosenanästhesie sind Alarmzeichen für ein akutes Kaudasyndrom."
+      },
+      {
+        type: "vocab",
+        term: "die Reithosenanästhesie",
+        definition: "saddle anesthesia — numbness in the perineal/buttock area, a red flag for cauda equina syndrome",
+        example: "Eine Reithosenanästhesie in Kombination mit Blasenstörung ist ein akuter Notfall."
+      },
+      {
+        type: "cloze",
+        text: "Verschlimmert sich der Schmerz eher beim ___?",
+        options: ["Husten oder Pressen", "Sitzen im Sessel", "Sprechen", "Liegen im Bett"],
+        answerIndex: 0,
+        explanation: "Verschlimmerung durch Husten/Pressen deutet auf eine radikuläre Ursache hin."
+      },
+      {
+        type: "mc",
+        question: "Ein 70-jähriger Patient mit neu aufgetretenen Rückenschmerzen, ungewolltem Gewichtsverlust und bekanntem Prostatakarzinom. Woran denken Sie zuerst?",
+        options: ["Ossäre Metastasen", "Bandscheibenvorfall", "Muskelverspannung", "Nierensteine"],
+        answerIndex: 0,
+        explanation: "Tumoranamnese und Gewichtsverlust bei neuen Rückenschmerzen sind klassische Red Flags für Malignität."
+      },
+      {
+        type: "vocab",
+        term: "der Bandscheibenvorfall",
+        definition: "herniated disc",
+        example: "Ein Bandscheibenvorfall kann auf eine Nervenwurzel drücken und Schmerzen ins Bein verursachen."
+      },
+      {
+        type: "cloze",
+        text: "Haben Sie in letzter Zeit ungewollt an ___ verloren?",
+        options: ["Gewicht", "Größe", "Kraft im Arm", "Sehschärfe"],
+        answerIndex: 0,
+        explanation: "Ungewollter Gewichtsverlust ist ein Warnzeichen, das an eine ernstere Ursache denken lassen muss."
+      },
+      {
+        type: "mc",
+        question: "Wie erklären Sie dem Patienten verständlich, warum Sie bei diesen Warnzeichen ein MRT veranlassen?",
+        options: [
+          "Bei Ihren Beschwerden möchten wir sicherheitshalber mittels MRT prüfen, ob eine Nervenwurzel eingeengt ist oder eine andere ernste Ursache vorliegt.",
+          "Das ist nur Routine bei Rückenschmerzen.",
+          "Sie haben sicher einen Bandscheibenvorfall.",
+          "Dazu später mehr."
+        ],
+        answerIndex: 0,
+        explanation: "Den Grund für eine weiterführende Bildgebung ruhig und verständlich zu erklären, nimmt Angst."
+      },
+      {
+        type: "cloze",
+        text: "Bei anhaltender Taubheit oder Kraftverlust sollten Sie sich sofort wieder ___.",
+        options: ["vorstellen", "hinlegen", "ausruhen", "aufwärmen"],
+        answerIndex: 0,
+        explanation: "Klare Sicherheitsempfehlungen (Safety-Netting) gehören zu einer guten Patientenaufklärung."
+      },
+      {
+        type: "vocab",
+        term: "die Warnzeichen (Red Flags)",
+        definition: "red flags — alarming features requiring urgent further workup",
+        example: "Bei Rückenschmerzen mit Red Flags wie Blasenstörung ist eine sofortige Bildgebung notwendig."
+      },
+      {
+        type: "mc",
+        question: "Wie prüfen Sie, ob der Patient die Warnzeichen versteht, auf die er achten soll?",
+        options: ["Wissen Sie, worauf Sie achten sollten und wann Sie sich sofort wieder vorstellen sollten?", "Alles klar, oder?", "Sie wissen das schon.", "Kein weiterer Kommentar."],
+        answerIndex: 0,
+        explanation: "Gerade bei potenziell dringlichen Warnzeichen sollte aktiv nach dem Verständnis gefragt werden."
+      }
+    ]
+  },
+  {
+    id: "an-gelenkschmerzen",
+    part: "anamnese",
+    topic: "Rheumatologie",
+    title: "Gelenkschmerzen",
+    description: "Anamnese bei akuten und chronischen Gelenkschmerzen inklusive Patientenkommunikation.",
+    pool: [
+      {
+        type: "mc",
+        question: "Wie fragen Sie nach der Anzahl betroffener Gelenke?",
+        options: ["Ist nur ein Gelenk betroffen, oder schmerzen mehrere Gelenke gleichzeitig?", "Haben Sie oft Gelenkschmerzen?", "Welches Gelenk mögen Sie am liebsten?", "Sind Sie sportlich aktiv?"],
+        answerIndex: 0,
+        explanation: "Mono- vs. Polyarthritis ist eine zentrale erste Weichenstellung in der Differenzialdiagnose."
+      },
+      {
+        type: "vocab",
+        term: "die Monarthritis",
+        definition: "monoarthritis — inflammation of a single joint",
+        example: "Eine akute Monarthritis des Großzehengrundgelenks ist typisch für einen Gichtanfall."
+      },
+      {
+        type: "cloze",
+        text: "Ist das Gelenk ___, gerötet und überwärmt?",
+        options: ["geschwollen", "kalt", "blass", "unbeweglich"],
+        answerIndex: 0,
+        explanation: "Schwellung, Rötung und Überwärmung sind klassische Entzündungszeichen eines Gelenks."
+      },
+      {
+        type: "mc",
+        question: "Welche Frage prüft gezielt auf eine mögliche Gicht?",
+        options: ["Hatten Sie schon einmal einen plötzlichen, sehr starken Schmerz im Großzehengrundgelenk?", "Essen Sie gerne Gemüse?", "Haben Sie Kopfschmerzen?", "Sind Sie oft im Urlaub?"],
+        answerIndex: 0,
+        explanation: "Der plötzliche, starke Schmerz im Großzehengrundgelenk ist die klassische Präsentation eines Gichtanfalls."
+      },
+      {
+        type: "vocab",
+        term: "die Morgensteifigkeit",
+        definition: "morning stiffness — a key symptom in inflammatory arthritis such as rheumatoid arthritis",
+        example: "Wie lange dauert die Morgensteifigkeit der Gelenke nach dem Aufwachen an?"
+      },
+      {
+        type: "cloze",
+        text: "Dauert die Morgensteifigkeit länger als eine ___ an?",
+        options: ["Stunde", "Minute", "Woche", "Sekunde"],
+        answerIndex: 0,
+        explanation: "Morgensteifigkeit über eine Stunde spricht für eine entzündliche (z. B. rheumatoide) Genese."
+      },
+      {
+        type: "mc",
+        question: "Ein 45-jähriger Patient mit symmetrischer Schwellung der Fingergrundgelenke beidseits und Morgensteifigkeit über zwei Stunden. Woran denken Sie zuerst?",
+        options: ["Rheumatoide Arthritis", "Gicht", "Arthrose", "Muskelkater"],
+        answerIndex: 0,
+        explanation: "Symmetrische Polyarthritis mit langer Morgensteifigkeit ist typisch für eine rheumatoide Arthritis."
+      },
+      {
+        type: "vocab",
+        term: "die Arthrose",
+        definition: "osteoarthritis — degenerative joint disease",
+        example: "Im Gegensatz zur rheumatoiden Arthritis verschlimmert sich die Arthrose typischerweise im Tagesverlauf."
+      },
+      {
+        type: "cloze",
+        text: "Gibt es in Ihrer Familie weitere Fälle von ___ oder anderen Autoimmunerkrankungen?",
+        options: ["rheumatoider Arthritis", "Migräne", "Heuschnupfen", "Muskelkater"],
+        answerIndex: 0,
+        explanation: "Die Familienanamnese ist bei Verdacht auf eine Autoimmunerkrankung relevant."
+      },
+      {
+        type: "mc",
+        question: "Wie erklären Sie dem Patienten verständlich den Verdacht auf eine rheumatoide Arthritis?",
+        options: [
+          "Die Beschwerden und Blutwerte sprechen für eine Gelenkentzündung, die wir rheumatoide Arthritis nennen. Wir möchten Sie deshalb einem Rheumatologen vorstellen.",
+          "Sie haben Rheuma, das ist schlimm.",
+          "Das ist nur Verschleiß, kein Grund zur Sorge.",
+          "Dazu später mehr."
+        ],
+        answerIndex: 0,
+        explanation: "Die Diagnose sollte verständlich benannt und das weitere Vorgehen konkret erklärt werden."
+      },
+      {
+        type: "cloze",
+        text: "Eine frühzeitige Behandlung kann helfen, ___ der Gelenke zu verhindern.",
+        options: ["bleibende Schäden", "Muskelkater", "Sonnenbrand", "Erkältungen"],
+        answerIndex: 0,
+        explanation: "Die Bedeutung einer frühzeitigen Therapie sollte dem Patienten verständlich vermittelt werden."
+      },
+      {
+        type: "vocab",
+        term: "der Rheumafaktor",
+        definition: "rheumatoid factor — an antibody often (but not always) present in rheumatoid arthritis",
+        example: "Wir bestimmen zusätzlich den Rheumafaktor und die Anti-CCP-Antikörper."
+      },
+      {
+        type: "mc",
+        question: "Wie prüfen Sie, ob der Patient die Überweisung zum Rheumatologen verstanden hat?",
+        options: ["Ist Ihnen klar, warum eine fachärztliche Mitbetreuung jetzt sinnvoll ist? Haben Sie noch Fragen?", "Alles klar, oder?", "Sie gehen jetzt einfach dorthin.", "Kein weiterer Kommentar."],
+        answerIndex: 0,
+        explanation: "Eine offene Rückfrage stellt sicher, dass der Patient den Sinn der Überweisung verstanden hat."
+      }
+    ]
+  },
+
   // ---------------------------------------------------------------------
   // PART 2: SCHRIFTLICHER ARZTBRIEF
   // ---------------------------------------------------------------------
@@ -1157,6 +1461,280 @@ const LESSONS = [
     ]
   },
 
+  {
+    id: "ab-schwindel-synkope",
+    part: "arztbrief",
+    topic: "Neurologie/Kardiologie",
+    title: "Schwindel & Synkope",
+    description: "Formulierungen für den Arztbrief bei Synkope und Schwindelabklärung.",
+    pool: [
+      {
+        type: "cloze",
+        text: "Der Patient stellte sich nach einer kurzen ___ ohne Vorwarnung vor.",
+        options: ["Synkope", "Übelkeit", "Schwellung", "Rötung"],
+        answerIndex: 0,
+        explanation: "Klassischer Einleitungssatz mit Leitsymptom und wichtigem Zusatzmerkmal (hier: ohne Prodromi)."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie den Untersuchungsbefund bei unauffälliger neurologischer Untersuchung?",
+        options: [
+          "Neurologisch keine Auffälligkeiten, insbesondere keine fokalen Defizite.",
+          "Neurologisch war alles gut.",
+          "Er war neurologisch okay.",
+          "Untersuchung: normal, glaube ich."
+        ],
+        answerIndex: 0,
+        explanation: "Auch unauffällige Befunde werden mit relevanten Negativbefunden präzise dokumentiert."
+      },
+      {
+        type: "vocab",
+        term: "die Synkope",
+        definition: "syncope — transient loss of consciousness due to reduced cerebral blood flow",
+        example: "Anamnestisch berichtete der Patient über eine kurze Synkope beim Aufstehen."
+      },
+      {
+        type: "cloze",
+        text: "Im Langzeit-EKG zeigte sich kein Hinweis auf eine relevante ___.",
+        options: ["Rhythmusstörung", "Anämie", "Infektion", "Fraktur"],
+        answerIndex: 0,
+        explanation: "Ein unauffälliges Langzeit-EKG wird als relevanter Negativbefund dokumentiert."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie ein positives Schellong-Testergebnis?",
+        options: [
+          "Der Schellong-Test zeigte einen Blutdruckabfall von 30 mmHg systolisch beim Aufstehen, vereinbar mit einer orthostatischen Hypotonie.",
+          "Blutdruck ist beim Aufstehen gefallen, war wohl orthostatisch.",
+          "Test war positiv.",
+          "Blutdruck: schlecht im Stehen."
+        ],
+        answerIndex: 0,
+        explanation: "Testergebnisse werden mit konkreten Zahlenwerten und der klinischen Einordnung dokumentiert."
+      },
+      {
+        type: "vocab",
+        term: "die Ätiologie",
+        definition: "etiology — the cause of a condition",
+        example: "Die genaue Ätiologie der Synkope bleibt trotz umfangreicher Diagnostik unklar."
+      },
+      {
+        type: "cloze",
+        text: "Wir empfehlen eine ambulante kardiologische ___ zur weiteren Rhythmusüberwachung.",
+        options: ["Anbindung", "Einladung", "Rechnung", "Terminabsage"],
+        answerIndex: 0,
+        explanation: "Standardformulierung zur Empfehlung einer fachärztlichen Weiterbetreuung."
+      },
+      {
+        type: "mc",
+        question: "Wie schließen Sie den Arztbrief bei unklarer Synkopenursache ab?",
+        options: [
+          "Bei weiterhin unklarer Genese empfehlen wir eine ambulante Langzeit-Rhythmusüberwachung sowie Wiedervorstellung bei Rezidiv.",
+          "Ursache unklar, kein weiterer Plan.",
+          "Mal schauen, was passiert.",
+          "Er soll sich melden, falls nötig."
+        ],
+        answerIndex: 0,
+        explanation: "Auch bei unklarer Ursache sollte der Arztbrief eine konkrete Handlungsempfehlung enthalten."
+      },
+      {
+        type: "vocab",
+        term: "der Event-Recorder",
+        definition: "event recorder — a portable device to capture heart rhythm during symptomatic episodes",
+        example: "Bei seltenen Episoden kann ein Event-Recorder über mehrere Wochen getragen werden."
+      },
+      {
+        type: "cloze",
+        text: "Wir bitten um Vorstellung beim Kardiologen zur ___ bei Verdacht auf eine rhythmogene Synkope.",
+        options: ["weiteren Abklärung", "Terminabsage", "Kostenübernahme", "Zweitmeinung"],
+        answerIndex: 0,
+        explanation: "Standardformulierung zur Überweisung bei Verdacht auf eine kardiale Ursache."
+      }
+    ]
+  },
+  {
+    id: "ab-rueckenschmerzen",
+    part: "arztbrief",
+    topic: "Orthopädie",
+    title: "Rückenschmerzen",
+    description: "Formulierungen für den Arztbrief bei Rückenschmerz und Bandscheibenvorfall.",
+    pool: [
+      {
+        type: "cloze",
+        text: "Der Patient stellte sich mit seit einer Woche bestehenden, in das rechte Bein ausstrahlenden ___ vor.",
+        options: ["Rückenschmerzen", "Bauchschmerzen", "Kopfschmerzen", "Gelenkschmerzen"],
+        answerIndex: 0,
+        explanation: "Der Einleitungssatz benennt Dauer, Leitsymptom und Ausstrahlung."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie einen unauffälligen neurologischen Befund der unteren Extremität?",
+        options: [
+          "Motorik, Sensibilität und Reflexe der unteren Extremität waren seitengleich unauffällig.",
+          "Beine waren okay.",
+          "Neurologisch nichts Schlimmes.",
+          "Untersuchung: normal, glaube ich."
+        ],
+        answerIndex: 0,
+        explanation: "Der neurologische Befund wird strukturiert nach Motorik, Sensibilität und Reflexen dokumentiert."
+      },
+      {
+        type: "vocab",
+        term: "die Kaudasymptomatik",
+        definition: "cauda equina syndrome features",
+        example: "Bei fehlender Kaudasymptomatik wurde zunächst eine konservative Therapie eingeleitet."
+      },
+      {
+        type: "cloze",
+        text: "Im MRT der Lendenwirbelsäule zeigte sich ein ___ in Höhe LWK4/5 mit Wurzelkompression.",
+        options: ["Bandscheibenvorfall", "Knochenbruch", "Tumor", "Abszess"],
+        answerIndex: 0,
+        explanation: "Bildgebende Befunde werden mit genauer Höhenangabe und Befund dokumentiert."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie die eingeleitete Therapie bei unkompliziertem Bandscheibenvorfall?",
+        options: [
+          "Wir leiteten eine konservative Therapie mit Schmerzmitteln und Physiotherapie ein.",
+          "Er hat Tabletten bekommen und soll sich schonen.",
+          "Therapie: Schmerzmittel.",
+          "Wir haben ihm was gegen Schmerzen gegeben."
+        ],
+        answerIndex: 0,
+        explanation: "Die eingeleitete Therapie wird konkret benannt (Wirkstoffgruppe/Maßnahme)."
+      },
+      {
+        type: "vocab",
+        term: "die Wurzelkompression",
+        definition: "nerve root compression",
+        example: "Die Bildgebung zeigte eine Wurzelkompression auf Höhe L5."
+      },
+      {
+        type: "cloze",
+        text: "Bei Ausschluss von Red Flags empfehlen wir zunächst ein ___ Vorgehen.",
+        options: ["konservatives", "operatives", "radiologisches", "psychiatrisches"],
+        answerIndex: 0,
+        explanation: "Ohne Warnzeichen ist bei einem unkomplizierten Bandscheibenvorfall zunächst konservatives Vorgehen Standard."
+      },
+      {
+        type: "mc",
+        question: "Wie schließen Sie den Arztbrief ab, wenn eine Verschlechterung möglich ist?",
+        options: [
+          "Wir bitten um sofortige Wiedervorstellung bei neu auftretender Blasen- oder Mastdarmstörung.",
+          "Er soll sich melden, falls was ist.",
+          "Bei Problemen einfach kommen.",
+          "Alles wird gut."
+        ],
+        answerIndex: 0,
+        explanation: "Konkrete Warnzeichen für eine Wiedervorstellung gehören in den Abschluss des Arztbriefs."
+      },
+      {
+        type: "vocab",
+        term: "die Laminektomie",
+        definition: "laminectomy — surgical procedure to relieve pressure on the spinal cord/nerve roots",
+        example: "Bei ausgeprägter Wurzelkompression mit neurologischem Defizit kann eine Laminektomie notwendig werden."
+      },
+      {
+        type: "cloze",
+        text: "Wir empfehlen eine ambulante ___ zur Fortführung der Physiotherapie.",
+        options: ["Anbindung", "Einladung", "Rechnung", "Terminabsage"],
+        answerIndex: 0,
+        explanation: "Standardformulierung zur Empfehlung einer ambulanten Weiterbehandlung."
+      }
+    ]
+  },
+  {
+    id: "ab-gelenkschmerzen",
+    part: "arztbrief",
+    topic: "Rheumatologie",
+    title: "Gelenkschmerzen",
+    description: "Formulierungen für den Arztbrief bei Polyarthritis und Verdacht auf rheumatoide Arthritis.",
+    pool: [
+      {
+        type: "cloze",
+        text: "Der Patient stellte sich mit seit sechs Wochen bestehenden, symmetrischen ___ der Fingergrundgelenke vor.",
+        options: ["Schwellungen", "Verletzungen", "Ausschlägen", "Verhärtungen"],
+        answerIndex: 0,
+        explanation: "Der Einleitungssatz benennt Dauer, Symmetrie und Lokalisation des Leitbefundes."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie den Gelenkbefund korrekt?",
+        options: [
+          "Die Fingergrundgelenke II–IV waren beidseits geschwollen und druckschmerzhaft.",
+          "Finger waren dick und taten weh.",
+          "Gelenke: schlecht.",
+          "Er hatte komische Finger."
+        ],
+        answerIndex: 0,
+        explanation: "Gelenkbefunde werden mit genauer anatomischer Bezeichnung dokumentiert."
+      },
+      {
+        type: "vocab",
+        term: "die Synovitis",
+        definition: "synovitis — inflammation of the joint lining",
+        example: "Klinisch und sonographisch zeigte sich eine floride Synovitis der Fingergrundgelenke."
+      },
+      {
+        type: "cloze",
+        text: "Laborchemisch zeigten sich ein positiver ___ sowie erhöhte Anti-CCP-Antikörper.",
+        options: ["Rheumafaktor", "Blutzucker", "Kreatinin", "Bilirubin"],
+        answerIndex: 0,
+        explanation: "Serologische Befunde werden mit dem konkreten Parameter benannt."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie die Verdachtsdiagnose rheumatoide Arthritis im Arztbrief?",
+        options: [
+          "Bei typischer Klinik und Serologie gehen wir von einer rheumatoiden Arthritis aus.",
+          "Sie hat wohl Rheuma.",
+          "Rheuma, denke ich.",
+          "Gelenke: Rheuma wahrscheinlich."
+        ],
+        answerIndex: 0,
+        explanation: "Die Verdachtsdiagnose wird formell mit Bezug auf Klinik und Befunde formuliert."
+      },
+      {
+        type: "vocab",
+        term: "die Basistherapie",
+        definition: "disease-modifying therapy (DMARD therapy) in rheumatoid arthritis",
+        example: "Wir empfehlen den zeitnahen Beginn einer Basistherapie mit Methotrexat."
+      },
+      {
+        type: "cloze",
+        text: "Wir empfehlen eine zeitnahe Vorstellung beim ___ zur Einleitung einer Basistherapie.",
+        options: ["Rheumatologen", "Dermatologen", "Urologen", "HNO-Arzt"],
+        answerIndex: 0,
+        explanation: "Die fachärztliche Weiterbetreuung sollte konkret benannt werden."
+      },
+      {
+        type: "mc",
+        question: "Wie schließen Sie den Arztbrief ab?",
+        options: [
+          "Wir bitten um zeitnahe rheumatologische Anbindung sowie Wiedervorstellung bei Beschwerdezunahme.",
+          "Sie soll zum Rheumatologen, irgendwann.",
+          "Mal schauen.",
+          "Alles wird gut."
+        ],
+        answerIndex: 0,
+        explanation: "Der Abschluss sollte eine klare Handlungsempfehlung mit Zeitrahmen enthalten."
+      },
+      {
+        type: "vocab",
+        term: "die Gelenkpunktion",
+        definition: "joint aspiration — removing fluid from a joint for diagnostic testing",
+        example: "Bei Verdacht auf Gicht kann eine Gelenkpunktion mit Nachweis von Uratkristallen die Diagnose sichern."
+      },
+      {
+        type: "cloze",
+        text: "Bei Verdacht auf einen Gichtanfall behandeln wir zunächst mit ___ Medikamenten.",
+        options: ["entzündungshemmenden", "antibiotischen", "blutdrucksenkenden", "blutzuckersenkenden"],
+        answerIndex: 0,
+        explanation: "Ein akuter Gichtanfall wird initial mit entzündungshemmenden Medikamenten behandelt."
+      }
+    ]
+  },
+
   // ---------------------------------------------------------------------
   // PART 3: FACHGESPRÄCH
   // ---------------------------------------------------------------------
@@ -1601,6 +2179,264 @@ const LESSONS = [
         ],
         answerIndex: 0,
         explanation: "Eine strukturierte Antwort zeigt, dass bei fehlendem Ansprechen systematisch reevaluiert wird (Diagnostik, Fokussuche, Therapieanpassung)."
+      }
+    ]
+  },
+  {
+    id: "fg-schwindel-synkope",
+    part: "fachgespraech",
+    topic: "Neurologie/Kardiologie",
+    title: "Schwindel & Synkope",
+    description: "Differenzialdiagnose und Vorgehen bei Schwindel und Synkope.",
+    pool: [
+      {
+        type: "mc",
+        question: "Ein 75-jähriger Patient mit plötzlicher, kurzer Synkope ohne Prodromi und unregelmäßigem Puls. Wichtigste Verdachtsdiagnose?",
+        options: ["Kardiale Synkope (Rhythmusstörung)", "Vasovagale Synkope", "Migräne", "Hypoglykämie"],
+        answerIndex: 0,
+        explanation: "Fehlende Prodromi und unregelmäßiger Puls sprechen für eine kardiale, rhythmogene Synkope."
+      },
+      {
+        type: "vocab",
+        term: "vasovagal",
+        definition: "vasovagal — relating to a common, benign type of syncope triggered by e.g. pain, fear, or prolonged standing",
+        example: "Vasovagale Synkopen treten häufig nach längerem Stehen oder starken Emotionen auf."
+      },
+      {
+        type: "mc",
+        question: "Welches Vorgehen ist bei unklarer Synkope am sinnvollsten?",
+        options: ["EKG, Langzeit-EKG, Schellong-Test, ggf. Echokardiographie", "Nur ein Röntgen des Knies", "Nur eine Urinuntersuchung", "Nur eine Blutzuckermessung"],
+        answerIndex: 0,
+        explanation: "Eine strukturierte Stufendiagnostik aus EKG, Langzeit-EKG und Schellong-Test deckt die häufigsten Ursachen ab."
+      },
+      {
+        type: "cloze",
+        text: "Bei jungen Patienten ohne strukturelle Herzerkrankung ist die ___ Synkope die häufigste Ursache.",
+        options: ["vasovagale", "kardiale", "zerebrale", "metabolische"],
+        answerIndex: 0,
+        explanation: "Die vasovagale Synkope ist bei jungen, herzgesunden Patienten die häufigste Ursache."
+      },
+      {
+        type: "vocab",
+        term: "die Prodromi",
+        definition: "prodromal symptoms preceding syncope (e.g. sweating, nausea, tunnel vision) — typical for vasovagal syncope, often absent in cardiac syncope",
+        example: "Das Fehlen von Prodromi spricht eher für eine kardiale Ursache der Synkope."
+      },
+      {
+        type: "mc",
+        question: "Welche Differenzialdiagnose sollten Sie bei Schwindel mit Drehsensation zusätzlich nennen?",
+        options: ["Benigner paroxysmaler Lagerungsschwindel (BPLS)", "Migräne mit Aura", "Sodbrennen", "Muskelkater"],
+        answerIndex: 0,
+        explanation: "Lagerungsabhängiger Drehschwindel ist typisch für den benignen paroxysmalen Lagerungsschwindel."
+      },
+      {
+        type: "cloze",
+        text: "Bei Verdacht auf einen benignen paroxysmalen Lagerungsschwindel führen wir das ___-Manöver durch.",
+        options: ["Dix-Hallpike", "Schellong", "Valsalva", "Romberg"],
+        answerIndex: 0,
+        explanation: "Das Dix-Hallpike-Manöver provoziert den typischen Nystagmus beim BPLS und sichert die Diagnose."
+      },
+      {
+        type: "mc",
+        question: "Wie präsentieren Sie den Fall professionell?",
+        options: [
+          "Aufgrund der plötzlichen Synkope ohne Prodromi bei bekannter Herzrhythmusstörung gehe ich am ehesten von einer kardialen Synkope aus.",
+          "Er ist einfach umgekippt, keine Ahnung wieso.",
+          "Vielleicht Kreislauf, vielleicht Herz.",
+          "Synkope halt, wie immer."
+        ],
+        answerIndex: 0,
+        explanation: "Eine strukturierte, begründete Verdachtsdiagnose mit Bezug auf Anamnese und Vorerkrankungen ist im Fachgespräch erwartet."
+      },
+      {
+        type: "vocab",
+        term: "die kardiale Abklärung",
+        definition: "cardiac workup",
+        example: "Bei Verdacht auf eine kardiale Synkope ist eine rasche kardiale Abklärung notwendig."
+      },
+      {
+        type: "mc",
+        question: "Der Oberarzt fragt: „Welche Alarmzeichen sprechen für eine kardiale Ursache?“ Wie antworten Sie?",
+        options: [
+          "Synkope ohne Prodromi, während Belastung, mit Herzklopfen oder bei bekannter struktureller Herzerkrankung.",
+          "Keine Ahnung, alle Synkopen sind gleich.",
+          "Nur das Alter zählt.",
+          "Es gibt keine Alarmzeichen."
+        ],
+        answerIndex: 0,
+        explanation: "Eine gute Antwort nennt konkrete klinische Alarmzeichen für eine kardiale Genese."
+      }
+    ]
+  },
+  {
+    id: "fg-rueckenschmerzen",
+    part: "fachgespraech",
+    topic: "Orthopädie",
+    title: "Rückenschmerzen",
+    description: "Differenzialdiagnose und Vorgehen bei Rückenschmerz mit und ohne Warnzeichen.",
+    pool: [
+      {
+        type: "mc",
+        question: "Ein 70-jähriger Patient mit neu aufgetretenen Rückenschmerzen, Gewichtsverlust und bekanntem Prostatakarzinom. Wichtigste Verdachtsdiagnose?",
+        options: ["Ossäre Metastasen", "Lumbaler Bandscheibenvorfall", "Muskelverspannung", "Nierensteine"],
+        answerIndex: 0,
+        explanation: "Tumoranamnese und Gewichtsverlust bei neuen Rückenschmerzen sind hochverdächtig auf ossäre Metastasen."
+      },
+      {
+        type: "vocab",
+        term: "die ossäre Metastase",
+        definition: "bone metastasis",
+        example: "Bei bekanntem Prostatakarzinom denken wir differenzialdiagnostisch an ossäre Metastasen."
+      },
+      {
+        type: "mc",
+        question: "Welches Vorgehen ist bei Verdacht auf ein Kaudasyndrom am dringlichsten?",
+        options: ["Notfall-MRT und umgehende neurochirurgische Vorstellung", "Ambulante Physiotherapie", "Nur Schmerzmittel verschreiben", "Kontrolle in zwei Wochen"],
+        answerIndex: 0,
+        explanation: "Ein Kaudasyndrom ist ein neurochirurgischer Notfall und erfordert sofortiges Handeln."
+      },
+      {
+        type: "cloze",
+        text: "Ein Kaudasyndrom ist ein ___ und erfordert eine notfallmäßige Abklärung.",
+        options: ["Notfall", "Zufallsbefund", "Spätsymptom", "Dauerzustand"],
+        answerIndex: 0,
+        explanation: "Ein Kaudasyndrom kann unbehandelt zu bleibenden neurologischen Schäden führen."
+      },
+      {
+        type: "vocab",
+        term: "die Spinalkanalstenose",
+        definition: "spinal canal stenosis",
+        example: "Bei älteren Patienten mit belastungsabhängigen Beinschmerzen denken wir auch an eine Spinalkanalstenose."
+      },
+      {
+        type: "mc",
+        question: "Welche Differenzialdiagnose sollten Sie bei akutem Rückenschmerz mit Fieber nennen?",
+        options: ["Spondylodiszitis", "Muskelverspannung", "Nierensteine ohne Fieber", "Migräne"],
+        answerIndex: 0,
+        explanation: "Rückenschmerz mit Fieber sollte immer an eine Spondylodiszitis denken lassen."
+      },
+      {
+        type: "cloze",
+        text: "Bei Verdacht auf eine Spondylodiszitis bestimmen wir die Entzündungsparameter und veranlassen ein ___ der Wirbelsäule.",
+        options: ["MRT", "Röntgen des Schädels", "EKG", "Ultraschall des Herzens"],
+        answerIndex: 0,
+        explanation: "Das MRT ist die sensitivste Untersuchung zum Nachweis einer Spondylodiszitis."
+      },
+      {
+        type: "mc",
+        question: "Wie präsentieren Sie den Fall professionell?",
+        options: [
+          "Aufgrund der Red Flags Gewichtsverlust und bekannter Tumorerkrankung gehe ich differenzialdiagnostisch vorrangig von ossären Metastasen aus und habe ein MRT veranlasst.",
+          "Rückenschmerzen halt, nichts Besonderes.",
+          "Vielleicht nur Verspannung.",
+          "Keine Ahnung, Rücken tut halt weh."
+        ],
+        answerIndex: 0,
+        explanation: "Eine gute Fallpräsentation nennt Red Flags, Verdachtsdiagnose und bereits eingeleitete Maßnahmen."
+      },
+      {
+        type: "vocab",
+        term: "die Diszitis",
+        definition: "discitis — infection of the intervertebral disc",
+        example: "Fieber und Rückenschmerz zusammen sollten immer an eine Diszitis denken lassen."
+      },
+      {
+        type: "mc",
+        question: "Der Oberarzt fragt: „Welche Warnzeichen rechtfertigen eine notfallmäßige Bildgebung?“ Wie antworten Sie?",
+        options: [
+          "Neurologische Ausfälle, Blasen-/Mastdarmstörung, Fieber, Tumoranamnese oder Trauma.",
+          "Nur starke Schmerzen zählen.",
+          "Alter allein reicht.",
+          "Es gibt keine klaren Warnzeichen."
+        ],
+        answerIndex: 0,
+        explanation: "Eine gute Antwort nennt die etablierten Red Flags für Rückenschmerz vollständig."
+      }
+    ]
+  },
+  {
+    id: "fg-gelenkschmerzen",
+    part: "fachgespraech",
+    topic: "Rheumatologie",
+    title: "Gelenkschmerzen",
+    description: "Differenzialdiagnose und Vorgehen bei akuter und chronischer Arthritis.",
+    pool: [
+      {
+        type: "mc",
+        question: "Ein 45-jähriger Patient mit symmetrischer Schwellung der Fingergrundgelenke und Morgensteifigkeit über zwei Stunden. Wichtigste Verdachtsdiagnose?",
+        options: ["Rheumatoide Arthritis", "Gicht", "Arthrose", "Psoriasis-Arthritis"],
+        answerIndex: 0,
+        explanation: "Symmetrische Polyarthritis mit langer Morgensteifigkeit ist typisch für eine rheumatoide Arthritis."
+      },
+      {
+        type: "vocab",
+        term: "die Anti-CCP-Antikörper",
+        definition: "anti-CCP antibodies — a highly specific marker for rheumatoid arthritis",
+        example: "Positive Anti-CCP-Antikörper untermauern den Verdacht auf eine rheumatoide Arthritis."
+      },
+      {
+        type: "mc",
+        question: "Ein 55-jähriger Mann mit plötzlichem, sehr starkem Schmerz im Großzehengrundgelenk nach reichlichem Alkoholkonsum. Verdachtsdiagnose?",
+        options: ["Gichtanfall", "Rheumatoide Arthritis", "Arthrose", "Reaktive Arthritis"],
+        answerIndex: 0,
+        explanation: "Plötzlicher, starker Schmerz im Großzehengrundgelenk nach Alkoholexzess ist klassisch für einen Gichtanfall."
+      },
+      {
+        type: "cloze",
+        text: "Zur Diagnosesicherung eines Gichtanfalls kann eine Gelenkpunktion mit Nachweis von ___ erfolgen.",
+        options: ["Uratkristallen", "Bakterien", "Blutzellen", "Fettzellen"],
+        answerIndex: 0,
+        explanation: "Der Nachweis von Uratkristallen in der Gelenkflüssigkeit sichert die Diagnose Gicht."
+      },
+      {
+        type: "vocab",
+        term: "die Uratkristalle",
+        definition: "urate crystals — found in synovial fluid in gout",
+        example: "Der Nachweis von Uratkristallen in der Gelenkflüssigkeit sichert die Diagnose Gicht."
+      },
+      {
+        type: "mc",
+        question: "Welches Vorgehen ist bei Verdacht auf eine septische Arthritis am dringlichsten?",
+        options: ["Umgehende Gelenkpunktion und Beginn einer antibiotischen Therapie", "Abwarten und Schmerzmittel geben", "Ambulante Physiotherapie", "Kontrolle in zwei Wochen"],
+        answerIndex: 0,
+        explanation: "Eine septische Arthritis ist ein orthopädischer Notfall und erfordert sofortiges Handeln zum Gelenkerhalt."
+      },
+      {
+        type: "cloze",
+        text: "Eine septische Arthritis ist ein ___ und erfordert rasches Handeln, um das Gelenk zu erhalten.",
+        options: ["Notfall", "Zufallsbefund", "Spätsymptom", "harmloser Befund"],
+        answerIndex: 0,
+        explanation: "Unbehandelt kann eine septische Arthritis das Gelenk irreversibel zerstören."
+      },
+      {
+        type: "vocab",
+        term: "die septische Arthritis",
+        definition: "septic arthritis — bacterial joint infection, an orthopedic emergency",
+        example: "Bei Fieber und akut geschwollenem, überwärmtem Gelenk muss eine septische Arthritis ausgeschlossen werden."
+      },
+      {
+        type: "mc",
+        question: "Wie präsentieren Sie den Fall professionell?",
+        options: [
+          "Aufgrund der symmetrischen Polyarthritis mit Morgensteifigkeit über zwei Stunden und positivem Rheumafaktor gehe ich am ehesten von einer rheumatoiden Arthritis aus.",
+          "Gelenke tun halt weh.",
+          "Vielleicht Rheuma, vielleicht nicht.",
+          "Keine Ahnung, was es ist."
+        ],
+        answerIndex: 0,
+        explanation: "Eine strukturierte Präsentation nennt Befunde, Serologie und die daraus abgeleitete Verdachtsdiagnose."
+      },
+      {
+        type: "mc",
+        question: "Der Oberarzt fragt: „Welche Differenzialdiagnose dürfen Sie bei akuter Monarthritis mit Fieber nicht übersehen?“ Wie antworten Sie?",
+        options: [
+          "Die septische Arthritis, da sie unbehandelt das Gelenk irreversibel schädigen kann.",
+          "Das ist immer nur Gicht.",
+          "Fieber ist dabei nicht wichtig.",
+          "Das kommt nie vor."
+        ],
+        answerIndex: 0,
+        explanation: "Die septische Arthritis muss als gefährlichste Differenzialdiagnose bei akuter, fieberhafter Monarthritis immer bedacht werden."
       }
     ]
   }
