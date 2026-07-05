@@ -30,7 +30,7 @@ const LESSONS = [
           "Wo wohnen Sie?"
         ],
         answerIndex: 0,
-        explanation: "„Seit wann...?" erfragt den zeitlichen Beginn der Beschwerden – ein zentraler Bestandteil der Anamnese."
+        explanation: "„Seit wann...?“ erfragt den zeitlichen Beginn der Beschwerden – ein zentraler Bestandteil der Anamnese."
       },
       {
         type: "vocab",
@@ -136,7 +136,7 @@ const LESSONS = [
         type: "fill",
         text: "Verstärkt sich der Schmerz beim ___ (Loslassen) der Bauchdecke?",
         answer: "Loslassen",
-        explanation: "Der „Loslassschmerz" (rebound tenderness) ist ein klassisches Peritonismus-Zeichen, z. B. bei Appendizitis."
+        explanation: "Der „Loslassschmerz“ (rebound tenderness) ist ein klassisches Peritonismus-Zeichen, z. B. bei Appendizitis."
       },
       {
         type: "mc",
@@ -248,7 +248,7 @@ const LESSONS = [
           "Schmerzen, Brust, drei Tage."
         ],
         answerIndex: 0,
-        explanation: "Im Arztbrief wird die indirekte, formelle Formulierung „Der Patient berichtet über..." verwendet."
+        explanation: "Im Arztbrief wird die indirekte, formelle Formulierung „Der Patient berichtet über...“ verwendet."
       },
       {
         type: "vocab",
@@ -272,7 +272,7 @@ const LESSONS = [
           "Allergiefrei laut Patient, glaube ich."
         ],
         answerIndex: 0,
-        explanation: "„Allergien sind nicht bekannt" ist die im Arztbrief übliche, neutrale Standardformulierung."
+        explanation: "„Allergien sind nicht bekannt“ ist die im Arztbrief übliche, neutrale Standardformulierung."
       },
       {
         type: "vocab",
@@ -311,7 +311,7 @@ const LESSONS = [
           "Untersuchung: normal."
         ],
         answerIndex: 0,
-        explanation: "„Bei der körperlichen Untersuchung zeigte sich..." ist die Standardformel zur Einleitung des Untersuchungsbefundes."
+        explanation: "„Bei der körperlichen Untersuchung zeigte sich...“ ist die Standardformel zur Einleitung des Untersuchungsbefundes."
       },
       {
         type: "fill",
@@ -335,7 +335,7 @@ const LESSONS = [
           "Vielleicht Operation?"
         ],
         answerIndex: 0,
-        explanation: "„Wir empfehlen..." ist die übliche, professionelle Formulierung für Therapieempfehlungen."
+        explanation: "„Wir empfehlen...“ ist die übliche, professionelle Formulierung für Therapieempfehlungen."
       },
       {
         type: "fill",
@@ -565,7 +565,7 @@ const LESSONS = [
       },
       {
         type: "mc",
-        question: "Der Oberarzt fragt: „Was wäre Ihre wichtigste Differenzialdiagnose?" Wie antworten Sie professionell?",
+        question: "Der Oberarzt fragt: „Was wäre Ihre wichtigste Differenzialdiagnose?“ Wie antworten Sie professionell?",
         options: [
           "Neben der Appendizitis denke ich differenzialdiagnostisch auch an eine Divertikulitis oder eine Adnexitis.",
           "Keine Ahnung, vielleicht mehrere Sachen.",
