@@ -6,8 +6,12 @@
 //
 // Exercise types supported by app.js:
 //   'mc'    multiple choice   { question, options[], answerIndex, explanation }
-//   'fill'  fill in the blank { text (contains ___), answer, explanation, hint? }
+//   'cloze' fill in the blank, option-based { text (contains ___), options[], answerIndex, explanation, hint? }
 //   'vocab' flashcard         { term, definition, example? }
+//
+// For 'mc' and 'cloze', option order is shuffled at render time (see
+// shuffledIndices() in app.js) — the correct answer does not need to be
+// (and should not be) always authored at index 0.
 
 const LESSONS = [
   // ---------------------------------------------------------------------
@@ -39,11 +43,11 @@ const LESSONS = [
         example: "Strahlen die Schmerzen in den linken Arm oder in den Kiefer aus?"
       },
       {
-        type: "fill",
-        text: "Ist der Schmerz ___ (dumpf, drückend) oder eher ___ (stechend, scharf)?",
-        answer: "dumpf, drückend",
-        explanation: "Bei Verdacht auf ACS wird der Schmerzcharakter typischerweise als dumpf/drückend beschrieben, im Gegensatz zu stechendem Schmerz (eher muskuloskelettal).",
-        hint: "Denken Sie an die Beschreibung eines Angina-pectoris-Schmerzes."
+        type: "cloze",
+        text: "Bei Verdacht auf ein akutes Koronarsyndrom beschreibt der Patient den Brustschmerz typischerweise als ___.",
+        options: ["dumpf und drückend", "hell und juckend", "stechend und scharf", "pulsierend im Takt des Pulses"],
+        answerIndex: 0,
+        explanation: "Bei Verdacht auf ACS wird der Schmerzcharakter typischerweise als dumpf/drückend beschrieben, im Gegensatz zu stechendem Schmerz (eher muskuloskelettal)."
       },
       {
         type: "mc",
@@ -64,9 +68,10 @@ const LESSONS = [
         example: "Treten die Schmerzen belastungsabhängig oder auch in Ruhe auf?"
       },
       {
-        type: "fill",
-        text: "Haben Sie zusätzlich zu den Schmerzen auch ___ (Luftnot) oder ___ (Schweißausbruch) bemerkt?",
-        answer: "Luftnot, Schweißausbruch",
+        type: "cloze",
+        text: "Haben Sie zusätzlich zu den Schmerzen auch ___ bemerkt?",
+        options: ["Luftnot oder Schweißausbruch", "Juckreiz am Bein", "Verstopfung", "Ohrenschmerzen"],
+        answerIndex: 0,
         explanation: "Begleitsymptome wie Dyspnoe und Diaphorese erhöhen den Verdacht auf ein akutes Koronarsyndrom und müssen aktiv erfragt werden."
       },
       {
@@ -80,6 +85,50 @@ const LESSONS = [
         ],
         answerIndex: 0,
         explanation: "Ein beschriebenes „Druck- oder Engegefühl“ auf der Brust ist die klassische Umschreibung für Angina-pectoris-artige Beschwerden."
+      },
+      {
+        type: "mc",
+        question: "Wie erklären Sie dem Patienten verständlich, warum Sie jetzt ein EKG schreiben und Blut abnehmen möchten?",
+        options: [
+          "Wir vermuten, dass die Beschwerden vom Herzen kommen könnten. Deshalb machen wir jetzt ein EKG und einen Bluttest, um das genau zu prüfen.",
+          "Sie haben ganz sicher einen Herzinfarkt.",
+          "Das ist bestimmt nichts Schlimmes, machen Sie sich keine Gedanken.",
+          "Das erkläre ich Ihnen, wenn die Ergebnisse da sind."
+        ],
+        answerIndex: 0,
+        explanation: "Gute Patientenkommunikation ist ehrlich und beruhigend zugleich: den Verdacht benennen, das Vorgehen erklären, ohne vorschnell eine Diagnose zu stellen oder die Sorgen des Patienten zu übergehen."
+      },
+      {
+        type: "cloze",
+        text: "Wir werden jetzt ein EKG schreiben und Ihnen Blut abnehmen, um einen ___ auszuschließen.",
+        options: ["Herzinfarkt", "Beinbruch", "Sonnenbrand", "Schnupfen"],
+        answerIndex: 0,
+        explanation: "Der Patient sollte in einfachen Worten erfahren, wonach konkret gesucht wird — das schafft Vertrauen und reduziert Angst."
+      },
+      {
+        type: "vocab",
+        term: "beruhigen, ohne zu verharmlosen",
+        definition: "to reassure without downplaying — a core patient-communication skill",
+        example: "Ich verstehe, dass das beunruhigend ist. Wir nehmen Ihre Beschwerden ernst und klären das jetzt gründlich ab."
+      },
+      {
+        type: "mc",
+        question: "Wie prüfen Sie am Ende des Gesprächs, ob der Patient Ihre Erklärung verstanden hat?",
+        options: [
+          "Habe ich das verständlich erklärt, oder haben Sie noch Fragen dazu?",
+          "Alles klar?",
+          "Sie haben doch verstanden, oder?",
+          "Kein weiterer Kommentar nötig."
+        ],
+        answerIndex: 0,
+        explanation: "Eine offene Rückfrage gibt dem Patienten echten Raum für Nachfragen, statt ihn nur pauschal zu bestätigen."
+      },
+      {
+        type: "cloze",
+        text: "Bevor wir Ihnen Blut abnehmen, möchte ich kurz Ihr ___ dazu einholen.",
+        options: ["Einverständnis", "Rezept", "Zeugnis", "Trinkgeld"],
+        answerIndex: 0,
+        explanation: "Vor jeder Maßnahme, auch einer einfachen Blutabnahme, gehört eine kurze Aufklärung und das Einholen des Einverständnisses zum professionellen Standard."
       }
     ]
   },
@@ -109,9 +158,10 @@ const LESSONS = [
         example: "Haben Sie Übelkeit oder mussten Sie sich erbrechen?"
       },
       {
-        type: "fill",
-        text: "Ist der Stuhlgang ___ (regelmäßig) oder haben Sie eine Veränderung bemerkt, z. B. ___ (Durchfall oder Verstopfung)?",
-        answer: "regelmäßig, Durchfall oder Verstopfung",
+        type: "cloze",
+        text: "Ist Ihr Stuhlgang ___ oder haben Sie zuletzt eine Veränderung bemerkt?",
+        options: ["regelmäßig", "immer blutig", "schmerzlos beim Sitzen", "nur nachts vorhanden"],
+        answerIndex: 0,
         explanation: "Veränderungen der Stuhlgewohnheiten sind ein wichtiger Baustein der gastroenterologischen Anamnese."
       },
       {
@@ -133,10 +183,11 @@ const LESSONS = [
         example: "Besteht ein Druckschmerz im rechten Unterbauch (McBurney-Punkt)?"
       },
       {
-        type: "fill",
-        text: "Verstärkt sich der Schmerz beim ___ (Loslassen) der Bauchdecke?",
-        answer: "Loslassen",
-        explanation: "Der „Loslassschmerz“ (rebound tenderness) ist ein klassisches Peritonismus-Zeichen, z. B. bei Appendizitis."
+        type: "cloze",
+        text: "Verstärkt sich der Schmerz, wenn Sie Ihre Hand nach dem Eindrücken der Bauchdecke plötzlich ___?",
+        options: ["loslassen", "auflegen", "erwärmen", "leicht anheben"],
+        answerIndex: 0,
+        explanation: "Dieses Manöver prüft den sogenannten „Loslassschmerz“ (rebound tenderness) — ein klassisches Peritonismus-Zeichen, z. B. bei Appendizitis."
       },
       {
         type: "mc",
@@ -149,6 +200,50 @@ const LESSONS = [
         ],
         answerIndex: 0,
         explanation: "Alkoholkonsum ist bei V. a. Pankreatitis oder Gastritis eine zentrale anamnestische Frage."
+      },
+      {
+        type: "mc",
+        question: "Wie erklären Sie dem Patienten verständlich den Verdacht auf eine Blinddarmentzündung?",
+        options: [
+          "Nach der Untersuchung vermuten wir eine Entzündung des Blinddarms. Deshalb machen wir jetzt einen Ultraschall, um das genauer zu prüfen.",
+          "Sie haben eine Blinddarmentzündung, das ist sicher.",
+          "Das ist wahrscheinlich nur Blähungen, kein Grund zur Sorge.",
+          "Wir müssen erst den Chefarzt fragen, bevor ich Ihnen etwas sagen kann."
+        ],
+        answerIndex: 0,
+        explanation: "Der Verdacht wird benannt, das weitere Vorgehen erklärt — ohne die Diagnose vorschnell als sicher hinzustellen oder die Beschwerden zu verharmlosen."
+      },
+      {
+        type: "cloze",
+        text: "Wenn sich der Verdacht auf eine Blinddarmentzündung bestätigt, wird wahrscheinlich eine ___ notwendig sein.",
+        options: ["Operation", "Bettruhe", "Diät", "Massage"],
+        answerIndex: 0,
+        explanation: "Der Patient sollte frühzeitig und in einfachen Worten über eine mögliche Operation informiert werden, damit er sich darauf einstellen kann."
+      },
+      {
+        type: "vocab",
+        term: "die Aufklärung",
+        definition: "informing the patient about a procedure/diagnosis so they can give informed consent",
+        example: "Vor der Operation erfolgt noch eine ausführliche Aufklärung durch den Chirurgen."
+      },
+      {
+        type: "mc",
+        question: "Der Patient wirkt sehr ängstlich. Welche Antwort ist beruhigend, ohne die Beschwerden herunterzuspielen?",
+        options: [
+          "Ich verstehe, dass Sie sich Sorgen machen. Wir untersuchen das jetzt gründlich und kümmern uns gut um Sie.",
+          "Das ist doch nur ein bisschen Bauchweh.",
+          "Machen Sie sich keine Sorgen, das ist bestimmt nichts.",
+          "Andere Patienten haben viel schlimmere Schmerzen."
+        ],
+        answerIndex: 0,
+        explanation: "Empathie zeigen und gleichzeitig Handlungssicherheit vermitteln, ohne die Sorgen des Patienten abzuwerten oder zu bagatellisieren."
+      },
+      {
+        type: "cloze",
+        text: "Habe ich das verständlich erklärt, oder haben Sie noch ___?",
+        options: ["Fragen", "Schmerzen", "Termine", "Rechnungen"],
+        answerIndex: 0,
+        explanation: "Eine offene Rückfrage am Ende der Erklärung stellt sicher, dass der Patient wirklich alles verstanden hat."
       }
     ]
   },
@@ -178,9 +273,10 @@ const LESSONS = [
         example: "Hatten Sie schon einmal eine Unterzuckerung mit Schwitzen oder Zittern?"
       },
       {
-        type: "fill",
-        text: "Kontrollieren Sie Ihren Blutzucker ___ (regelmäßig) und wie hoch sind Ihre Werte meistens?",
-        answer: "regelmäßig",
+        type: "cloze",
+        text: "Kontrollieren Sie Ihren Blutzucker ___ und wie hoch sind Ihre Werte meistens?",
+        options: ["regelmäßig", "nur beim Arzt", "gar nicht", "einmal im Jahr"],
+        answerIndex: 0,
         explanation: "Selbstmessung und übliche Blutzuckerwerte geben Auskunft über die Stoffwechseleinstellung."
       },
       {
@@ -202,9 +298,10 @@ const LESSONS = [
         example: "Nehmen Sie Ihre Medikamente regelmäßig wie verordnet ein?"
       },
       {
-        type: "fill",
-        text: "Gibt es in Ihrer Familie weitere Fälle von ___ (Diabetes) oder anderen Stoffwechselerkrankungen?",
-        answer: "Diabetes",
+        type: "cloze",
+        text: "Gibt es in Ihrer Familie weitere Fälle von ___ oder anderen Stoffwechselerkrankungen?",
+        options: ["Diabetes", "Migräne", "Rückenschmerzen", "Heuschnupfen"],
+        answerIndex: 0,
         explanation: "Die Familienanamnese ist bei Diabetes mellitus Typ 2 besonders relevant, da eine genetische Komponente besteht."
       },
       {
@@ -218,6 +315,50 @@ const LESSONS = [
         ],
         answerIndex: 0,
         explanation: "Sehverschlechterung kann auf eine diabetische Retinopathie hinweisen und sollte aktiv erfragt werden."
+      },
+      {
+        type: "mc",
+        question: "Wie erklären Sie dem Patienten seinen HbA1c-Wert verständlich, ohne medizinischen Fachjargon?",
+        options: [
+          "Dieser Wert zeigt, wie gut Ihr Blutzucker in den letzten drei Monaten eingestellt war — bei Ihnen ist er noch etwas zu hoch.",
+          "Ihr HbA1c ist bei 8,2 Prozent, das ist erhöht.",
+          "Das ist kompliziert, das erkläre ich Ihnen ein anderes Mal.",
+          "Machen Sie sich darüber keine Gedanken."
+        ],
+        answerIndex: 0,
+        explanation: "Laborwerte sollten in patientenverständlicher Sprache und mit konkreter Bedeutung erklärt werden, nicht nur als Zahl genannt oder abgetan werden."
+      },
+      {
+        type: "cloze",
+        text: "Um Ihre Werte besser einzustellen, empfehle ich Ihnen zusätzlich eine ___ bei einem Diabetologen.",
+        options: ["Vorstellung", "Impfung", "Röntgenaufnahme", "Bluttransfusion"],
+        answerIndex: 0,
+        explanation: "Nächste Schritte (z. B. eine fachärztliche Mitbetreuung) sollten dem Patienten konkret und nachvollziehbar erklärt werden."
+      },
+      {
+        type: "vocab",
+        term: "das Einverständnis",
+        definition: "consent — obtained before starting or changing a treatment such as insulin therapy",
+        example: "Bevor wir die Insulintherapie beginnen, brauche ich Ihr Einverständnis dazu."
+      },
+      {
+        type: "mc",
+        question: "Der Patient hat Angst vor einer Insulintherapie. Wie reagieren Sie einfühlsam?",
+        options: [
+          "Ich verstehe Ihre Sorge. Lassen Sie uns gemeinsam besprechen, wie das im Alltag funktioniert und was Ihnen Sicherheit gibt.",
+          "Das ist nicht schlimm, das machen alle.",
+          "Ohne Insulin werden Sie schwere Komplikationen bekommen.",
+          "Darüber müssen wir jetzt nicht sprechen."
+        ],
+        answerIndex: 0,
+        explanation: "Ängste ernst nehmen und den Patienten aktiv in die Entscheidung einbeziehen, statt Druck aufzubauen oder das Thema abzuwürgen."
+      },
+      {
+        type: "cloze",
+        text: "Ein Diabetes lässt sich mit der richtigen Behandlung gut ___, auch wenn er nicht heilbar ist.",
+        options: ["kontrollieren", "ignorieren", "verheimlichen", "verzögern"],
+        answerIndex: 0,
+        explanation: "Eine realistische, aber hoffnungsvolle Formulierung hilft Patienten, eine chronische Diagnose besser anzunehmen."
       }
     ]
   },
@@ -233,9 +374,10 @@ const LESSONS = [
     description: "Standardformulierungen für den Anamneseteil des Arztbriefs.",
     exercises: [
       {
-        type: "fill",
-        text: "Der Patient stellte sich mit seit zwei Tagen bestehenden ___ (Schmerzen) im rechten Unterbauch vor.",
-        answer: "Schmerzen",
+        type: "cloze",
+        text: "Der Patient stellte sich mit seit zwei Tagen bestehenden ___ im rechten Unterbauch vor.",
+        options: ["Schmerzen", "Juckreiz", "Schwellungen", "Rötungen"],
+        answerIndex: 0,
         explanation: "Klassischer Einleitungssatz: Patient + Zeitangabe + Leitsymptom + Lokalisation."
       },
       {
@@ -257,9 +399,10 @@ const LESSONS = [
         example: "Anamnestisch ist ein arterieller Hypertonus bekannt."
       },
       {
-        type: "fill",
-        text: "An Vorerkrankungen sind ein arterieller Hypertonus sowie ein Diabetes mellitus Typ 2 ___ (bekannt).",
-        answer: "bekannt",
+        type: "cloze",
+        text: "An Vorerkrankungen sind ein arterieller Hypertonus sowie ein Diabetes mellitus Typ 2 ___.",
+        options: ["bekannt", "vermutet", "ausgeschlossen", "unbehandelt geblieben"],
+        answerIndex: 0,
         explanation: "Standardformulierung zur Auflistung von Vorerkrankungen im Arztbrief."
       },
       {
@@ -281,10 +424,11 @@ const LESSONS = [
         example: "In der Sozialanamnese zeigt sich ein gelegentlicher Nikotinkonsum von 5 Zigaretten pro Tag."
       },
       {
-        type: "fill",
-        text: "Die Medikamentenanamnese ergab die regelmäßige Einnahme von Metformin und ___ (Ramipril).",
-        answer: "Ramipril",
-        explanation: "Der Medikamentenabschnitt listet alle regelmäßig eingenommenen Präparate mit Wirkstoffnamen auf."
+        type: "cloze",
+        text: "Die Medikamentenanamnese ergab die regelmäßige Einnahme von Metformin und ___.",
+        options: ["Ramipril", "Amoxicillin", "Ibuprofen", "Paracetamol"],
+        answerIndex: 0,
+        explanation: "Der Medikamentenabschnitt listet alle regelmäßig eingenommenen Präparate mit Wirkstoffnamen auf; Ramipril passt zum bekannten arteriellen Hypertonus."
       }
     ]
   },
@@ -314,9 +458,10 @@ const LESSONS = [
         explanation: "„Bei der körperlichen Untersuchung zeigte sich...“ ist die Standardformel zur Einleitung des Untersuchungsbefundes."
       },
       {
-        type: "fill",
-        text: "Laborchemisch zeigten sich erhöhte Entzündungsparameter mit einem CRP von 80 mg/l bei ___ (Leukozytose).",
-        answer: "Leukozytose",
+        type: "cloze",
+        text: "Laborchemisch zeigten sich erhöhte Entzündungsparameter mit einem CRP von 80 mg/l bei ___.",
+        options: ["Leukozytose", "Anämie", "Thrombozytopenie", "Hypoglykämie"],
+        answerIndex: 0,
         explanation: "Laborwerte werden im Arztbrief mit konkreten Zahlen und dem passenden Fachbegriff beschrieben."
       },
       {
@@ -338,9 +483,10 @@ const LESSONS = [
         explanation: "„Wir empfehlen...“ ist die übliche, professionelle Formulierung für Therapieempfehlungen."
       },
       {
-        type: "fill",
-        text: "Wir bedanken uns für die freundliche ___ (Mitbeurteilung) und verbleiben mit kollegialen Grüßen.",
-        answer: "Mitbeurteilung",
+        type: "cloze",
+        text: "Wir bedanken uns für die freundliche ___ und verbleiben mit kollegialen Grüßen.",
+        options: ["Mitbeurteilung", "Einladung", "Rechnung", "Terminvereinbarung"],
+        answerIndex: 0,
         explanation: "Standardschlussformel am Ende eines Arztbriefs, wenn ein Konsil angefordert wurde."
       }
     ]
@@ -371,9 +517,10 @@ const LESSONS = [
         example: "Z. n. Appendektomie 2019."
       },
       {
-        type: "fill",
-        text: "Nebendiagnosen: arterieller Hypertonus, Diabetes mellitus Typ 2, Z. n. ___ (Cholezystektomie) 2018.",
-        answer: "Cholezystektomie",
+        type: "cloze",
+        text: "Nebendiagnosen: arterieller Hypertonus, Diabetes mellitus Typ 2, Z. n. ___ 2018.",
+        options: ["Cholezystektomie", "Erkältung", "Kopfschmerzen", "Nasenbluten"],
+        answerIndex: 0,
         explanation: "Nebendiagnosen und relevante Voroperationen werden mit Jahresangabe aufgeführt."
       },
       {
@@ -395,9 +542,10 @@ const LESSONS = [
         example: "Ibuprofen 400 mg als Bedarfsmedikation bei Schmerzen."
       },
       {
-        type: "fill",
-        text: "Wir bitten um Fortführung der aktuellen Medikation sowie um ___ (Wiedervorstellung) bei Beschwerdepersistenz.",
-        answer: "Wiedervorstellung",
+        type: "cloze",
+        text: "Wir bitten um Fortführung der aktuellen Medikation sowie um ___ bei Beschwerdepersistenz.",
+        options: ["Wiedervorstellung", "Zweitmeinung", "Kostenübernahme", "Terminabsage"],
+        answerIndex: 0,
         explanation: "Standardformulierung, um die Nachsorge und mögliche Wiedervorstellung des Patienten zu regeln."
       }
     ]
@@ -507,9 +655,10 @@ const LESSONS = [
         example: "Wir empfehlen eine Verlaufskontrolle der Entzündungsparameter nach 6 Stunden."
       },
       {
-        type: "fill",
-        text: "Zur weiteren Abklärung eines Diabetes mellitus bestimmen wir den ___ (HbA1c-Wert) sowie den Nüchternblutzucker.",
-        answer: "HbA1c-Wert",
+        type: "cloze",
+        text: "Zur weiteren Abklärung eines Diabetes mellitus bestimmen wir den ___ sowie den Nüchternblutzucker.",
+        options: ["HbA1c-Wert", "D-Dimer-Wert", "PSA-Wert", "TSH-Wert"],
+        answerIndex: 0,
         explanation: "Der HbA1c-Wert zeigt die Blutzuckereinstellung der letzten 8-12 Wochen und ist zentral für Diagnose und Verlaufskontrolle."
       }
     ]
@@ -558,9 +707,10 @@ const LESSONS = [
         example: "Das weitere Procedere umfasst eine Sonographie sowie eine chirurgische Vorstellung."
       },
       {
-        type: "fill",
-        text: "Zusammenfassend gehe ich bei diesem Patienten am ehesten von einer akuten Appendizitis aus und schlage als nächsten Schritt eine ___ (chirurgische) Konsultation vor.",
-        answer: "chirurgische",
+        type: "cloze",
+        text: "Zusammenfassend gehe ich bei diesem Patienten am ehesten von einer akuten Appendizitis aus und schlage als nächsten Schritt eine ___ Konsultation vor.",
+        options: ["chirurgische", "dermatologische", "psychiatrische", "orthopädische"],
+        answerIndex: 0,
         explanation: "Der Abschluss der Fallpräsentation sollte immer eine klare Handlungsempfehlung enthalten."
       },
       {

@@ -393,26 +393,6 @@ body {
   background: #ffe3e3;
 }
 
-.fill-input {
-  width: 100%;
-  padding: 12px 14px;
-  font-size: 1rem;
-  border: 2px solid var(--border);
-  border-radius: 12px;
-  margin: 12px 0;
-}
-
-.fill-input.correct {
-  border-color: var(--green);
-  background: #eaffd9;
-}
-
-.fill-input.incorrect {
-  border-color: var(--red);
-  background: #ffe3e3;
-}
-
-.check-btn,
 .continue-btn,
 .reveal-btn {
   background: var(--green);
@@ -426,15 +406,9 @@ body {
   box-shadow: 0 3px 0 var(--green-dark);
 }
 
-.check-btn:hover,
 .continue-btn:hover,
 .reveal-btn:hover {
   filter: brightness(1.05);
-}
-
-.correct-answer {
-  color: var(--red);
-  font-weight: 600;
 }
 
 .vocab-term {

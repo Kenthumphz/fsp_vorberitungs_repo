@@ -200,30 +200,41 @@ function renderExercise() {
   card.className = "exercise-card";
 
   if (ex.type === "mc") card.appendChild(renderMultipleChoice(ex));
-  else if (ex.type === "fill") card.appendChild(renderFillBlank(ex));
+  else if (ex.type === "cloze") card.appendChild(renderCloze(ex));
   else if (ex.type === "vocab") card.appendChild(renderVocab(ex));
 
   root.appendChild(card);
 }
 
-function renderMultipleChoice(ex) {
+function shuffledIndices(n) {
+  const arr = Array.from({ length: n }, (_, i) => i);
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function renderChoiceExercise(questionHtml, ex, hintHtml = "") {
   const wrap = document.createElement("div");
-  wrap.innerHTML = `<p class="question">${ex.question}</p>`;
+  wrap.innerHTML = `<p class="question">${questionHtml}</p>${hintHtml}`;
 
   const optionsWrap = document.createElement("div");
   optionsWrap.className = "options";
 
-  ex.options.forEach((option, i) => {
+  const order = shuffledIndices(ex.options.length);
+
+  order.forEach((originalIndex, displayIndex) => {
     const btn = document.createElement("button");
     btn.className = "option-btn";
-    btn.textContent = option;
+    btn.textContent = ex.options[originalIndex];
     btn.addEventListener("click", () => {
       if (session.answered) return;
       session.answered = true;
-      const isCorrect = i === ex.answerIndex;
+      const isCorrect = originalIndex === ex.answerIndex;
       [...optionsWrap.children].forEach((b, j) => {
-        if (j === ex.answerIndex) b.classList.add("correct");
-        else if (j === i) b.classList.add("incorrect");
+        if (order[j] === ex.answerIndex) b.classList.add("correct");
+        else if (j === displayIndex) b.classList.add("incorrect");
       });
       finishAnswer(isCorrect, ex.explanation);
     });
@@ -235,39 +246,15 @@ function renderMultipleChoice(ex) {
   return wrap;
 }
 
-function renderFillBlank(ex) {
-  const wrap = document.createElement("div");
+function renderMultipleChoice(ex) {
+  return renderChoiceExercise(ex.question, ex);
+}
+
+function renderCloze(ex) {
   const [before, after] = ex.text.split("___");
-  wrap.innerHTML = `<p class="question">${before}<span class="blank-marker">____</span>${after ?? ""}</p>
-    ${ex.hint ? `<p class="hint">💡 ${ex.hint}</p>` : ""}
-    <input type="text" class="fill-input" placeholder="Ihre Antwort..." autocomplete="off" />
-    <button class="check-btn">Prüfen</button>`;
-
-  const input = wrap.querySelector(".fill-input");
-  const checkBtn = wrap.querySelector(".check-btn");
-
-  const submit = () => {
-    if (session.answered) return;
-    session.answered = true;
-    const isCorrect = input.value.trim().toLowerCase() === ex.answer.trim().toLowerCase();
-    input.classList.add(isCorrect ? "correct" : "incorrect");
-    input.disabled = true;
-    if (!isCorrect) {
-      const correction = document.createElement("p");
-      correction.className = "correct-answer";
-      correction.textContent = `Richtige Antwort: ${ex.answer}`;
-      wrap.appendChild(correction);
-    }
-    finishAnswer(isCorrect, ex.explanation);
-  };
-
-  checkBtn.addEventListener("click", submit);
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") submit();
-  });
-
-  wrap.appendChild(feedbackContainer());
-  return wrap;
+  const questionHtml = `${before}<span class="blank-marker">____</span>${after ?? ""}`;
+  const hintHtml = ex.hint ? `<p class="hint">💡 ${ex.hint}</p>` : "";
+  return renderChoiceExercise(questionHtml, ex, hintHtml);
 }
 
 function renderVocab(ex) {
