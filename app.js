@@ -3,6 +3,7 @@
 
 const STORAGE_KEY = "fspTrainerState";
 const PASS_THRESHOLD = 0.6; // lesson counts as "completed" at 60% correct
+const SESSION_SIZE = 10; // exercises drawn per playthrough from a lesson's pool
 const WEEKDAY_LABELS = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
 
 const PARTS = [
@@ -173,9 +174,15 @@ function renderMap() {
 // Lesson session
 // ---------------------------------------------------------------------
 
+function sampleFromPool(pool, n) {
+  const order = shuffledIndices(pool.length);
+  return order.slice(0, Math.min(n, pool.length)).map((i) => pool[i]);
+}
+
 function startLesson(lessonId) {
-  const lesson = LESSONS.find((l) => l.id === lessonId);
-  session = { lesson, index: 0, correct: 0, xpEarned: 0, answered: false };
+  const lessonDef = LESSONS.find((l) => l.id === lessonId);
+  const exercises = sampleFromPool(lessonDef.pool, SESSION_SIZE);
+  session = { lesson: { ...lessonDef, exercises }, index: 0, correct: 0, xpEarned: 0, answered: false };
   showView("lesson-view");
   renderExercise();
 }
