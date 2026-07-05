@@ -14,8 +14,10 @@ The FSP has three ~20-minute parts:
    differential diagnoses, workup, and treatment
 
 This app turns practice for each part into short, gamified lessons: multiple
-choice questions, fill-in-the-blank exercises, and vocabulary flashcards —
-with a daily streak and XP counter to build a practice habit.
+choice questions, option-based fill-in-the-blank ("cloze") exercises, and
+vocabulary flashcards — with a daily streak and XP counter to build a
+practice habit. Answer order is shuffled every time, so the correct option
+isn't predictable by position.
 
 ## Running it
 
@@ -52,24 +54,35 @@ lesson looks like:
   topic: "Kardiologie",
   title: "Lesson title",
   description: "...",
-  exercises: [
+  pool: [                  // larger bank; a random subset is drawn each playthrough
     { type: "mc", question, options: [...], answerIndex, explanation },
-    { type: "fill", text: "... ___ ...", answer, explanation, hint? },
+    { type: "cloze", text: "... ___ ...", options: [...], answerIndex, explanation, hint? },
     { type: "vocab", term, definition, example? },
   ],
 }
 ```
 
+`startLesson()` in `app.js` randomly samples `SESSION_SIZE` (10) exercises
+from a lesson's `pool` each time it's played, and `mc`/`cloze` option order
+is shuffled at render time — so repeat practice sees a different mix
+instead of the exact same set every time, and the correct answer is never
+predictable by position.
+
 Lessons within a part unlock in array order (a lesson unlocks once the
 previous one in that part has been passed at ≥60%). To add a new topic,
-just append a new lesson object to the relevant part.
+just append a new lesson object (with its own `pool`) to the relevant part.
 
 ## Current content
 
-Nine starter lessons (3 per exam part) covering common internal-medicine
-scenarios (chest pain, abdominal pain, diabetes, etc.) — this is a first
-pass to validate the app format, not exhaustive exam prep. More lessons /
-corrections to the medical German are very welcome.
+36 lessons (12 clinical topics × 3 exam parts), ~370 exercises total,
+covering common internal-medicine presentations: chest pain, abdominal
+pain, diabetes, dyspnea, headache, fever/infection, dizziness/syncope,
+back pain, joint pain, edema/heart failure, hypertension, and
+fatigue/anemia. Anamnese lessons also include doctor-to-patient
+explanatory language (explaining a diagnosis, next steps, reassurance,
+checking understanding) alongside history-taking questions. This is a
+solid first pass, not exhaustive exam prep — more lessons / corrections
+to the medical German are very welcome.
 
 ## Status
 

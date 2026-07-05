@@ -993,6 +993,310 @@ const LESSONS = [
     ]
   },
 
+  {
+    id: "an-oedeme-herzinsuffizienz",
+    part: "anamnese",
+    topic: "Kardiologie",
+    title: "Ödeme & Herzinsuffizienz",
+    description: "Anamnese bei Beinödemen und Verdacht auf Herzinsuffizienz inklusive Patientenkommunikation.",
+    pool: [
+      {
+        type: "mc",
+        question: "Wie fragen Sie nach der Lokalisation der Ödeme?",
+        options: ["Schwellen eher die Beine, oder haben Sie auch einen dicken Bauch bemerkt?", "Haben Sie oft geschwollene Füße?", "Wo wohnen Sie?", "Essen Sie viel Salz?"],
+        answerIndex: 0,
+        explanation: "Die Lokalisation der Ödeme (Beine vs. Bauch/Aszites) hilft, den Schweregrad der Herzinsuffizienz einzuschätzen."
+      },
+      {
+        type: "vocab",
+        term: "die Beinödeme",
+        definition: "leg edema",
+        example: "Schwellen Ihre Beine eher morgens oder abends stärker an?"
+      },
+      {
+        type: "cloze",
+        text: "Müssen Sie nachts mit mehreren ___ schlafen, weil Sie sonst schlecht Luft bekommen?",
+        options: ["Kissen", "Decken", "Fenstern", "Lichtern"],
+        answerIndex: 0,
+        explanation: "Das Schlafen mit erhöhtem Oberkörper ist ein typisches Zeichen der Orthopnoe bei Herzinsuffizienz."
+      },
+      {
+        type: "mc",
+        question: "Welche Frage prüft eine mögliche Gewichtszunahme durch Wassereinlagerung?",
+        options: ["Haben Sie in den letzten Tagen ungewöhnlich schnell an Gewicht zugenommen?", "Essen Sie viel?", "Wiegen Sie sich oft?", "Machen Sie Sport?"],
+        answerIndex: 0,
+        explanation: "Rasche Gewichtszunahme ist ein sensitives Zeichen für eine Flüssigkeitsretention bei Herzinsuffizienz."
+      },
+      {
+        type: "vocab",
+        term: "die paroxysmale nächtliche Dyspnoe",
+        definition: "paroxysmal nocturnal dyspnea — sudden breathlessness waking the patient at night, a hallmark of heart failure",
+        example: "Wachen Sie nachts plötzlich mit starker Atemnot auf?"
+      },
+      {
+        type: "cloze",
+        text: "Wie viele Kissen benutzen Sie zum Schlafen, um besser ___ zu können?",
+        options: ["atmen", "hören", "sehen", "schmecken"],
+        answerIndex: 0,
+        explanation: "Die Anzahl der benötigten Kissen quantifiziert die Orthopnoe."
+      },
+      {
+        type: "mc",
+        question: "Ein 68-jähriger Patient mit progredienten Beinödemen, Gewichtszunahme und Belastungsdyspnoe. Woran denken Sie zuerst?",
+        options: ["Herzinsuffizienz", "Nierensteine", "Migräne", "Muskelkater"],
+        answerIndex: 0,
+        explanation: "Die Symptomtrias aus Ödemen, Gewichtszunahme und Belastungsdyspnoe ist klassisch für eine Herzinsuffizienz."
+      },
+      {
+        type: "vocab",
+        term: "die Herzinsuffizienz",
+        definition: "heart failure",
+        example: "Die Symptomtrias aus Ödemen, Gewichtszunahme und Belastungsdyspnoe spricht für eine Herzinsuffizienz."
+      },
+      {
+        type: "cloze",
+        text: "Nehmen Sie Ihre Medikamente, insbesondere ___, regelmäßig ein?",
+        options: ["die Wassertabletten", "die Vitamine", "die Schmerzmittel", "die Hustensäfte"],
+        answerIndex: 0,
+        explanation: "Die Compliance bei der Diuretikaeinnahme ist entscheidend für die Symptomkontrolle."
+      },
+      {
+        type: "mc",
+        question: "Wie erklären Sie dem Patienten verständlich, warum er täglich sein Gewicht kontrollieren soll?",
+        options: [
+          "Eine schnelle Gewichtszunahme kann bedeuten, dass sich wieder Wasser im Körper einlagert. Deshalb bitten wir Sie, sich täglich zu wiegen und uns bei starker Zunahme zu informieren.",
+          "Wiegen ist einfach gut für die Gesundheit.",
+          "Das ist nicht so wichtig.",
+          "Dazu später mehr."
+        ],
+        answerIndex: 0,
+        explanation: "Der Grund für die tägliche Gewichtskontrolle sollte konkret und verständlich erklärt werden."
+      },
+      {
+        type: "cloze",
+        text: "Bitte reduzieren Sie Ihren ___-Konsum, um weniger Wasser einzulagern.",
+        options: ["Salz", "Zucker", "Kaffee", "Alkohol"],
+        answerIndex: 0,
+        explanation: "Eine salzarme Ernährung ist ein wichtiger Baustein der Herzinsuffizienzbehandlung."
+      },
+      {
+        type: "vocab",
+        term: "die Diuretika",
+        definition: "diuretics — medications that help the body eliminate excess fluid",
+        example: "Wir passen die Dosis Ihrer Diuretika an, um die Wassereinlagerung besser zu kontrollieren."
+      },
+      {
+        type: "mc",
+        question: "Wie prüfen Sie, ob der Patient die Bedeutung der täglichen Gewichtskontrolle verstanden hat?",
+        options: ["Ist Ihnen klar, warum das tägliche Wiegen wichtig ist, und wissen Sie, wann Sie uns informieren sollten?", "Alles klar, oder?", "Wiegen Sie sich einfach.", "Kein weiterer Kommentar."],
+        answerIndex: 0,
+        explanation: "Eine offene Rückfrage stellt sicher, dass der Patient die praktische Bedeutung verstanden hat."
+      }
+    ]
+  },
+  {
+    id: "an-hypertonie",
+    part: "anamnese",
+    topic: "Kardiologie",
+    title: "Hypertonie",
+    description: "Anamnese bei Bluthochdruck inklusive hypertensivem Notfall und Patientenkommunikation.",
+    pool: [
+      {
+        type: "mc",
+        question: "Wie fragen Sie nach der Dauer der bekannten Hypertonie?",
+        options: ["Seit wann ist bei Ihnen ein hoher Blutdruck bekannt?", "Haben Sie oft hohen Blutdruck?", "Messen Sie gerne Ihren Puls?", "Wie alt sind Sie?"],
+        answerIndex: 0,
+        explanation: "Die Dauer der bekannten Hypertonie ist relevant für das Risiko von Endorganschäden."
+      },
+      {
+        type: "vocab",
+        term: "der Bluthochdruck",
+        definition: "hypertension",
+        example: "Seit wann ist bei Ihnen ein Bluthochdruck bekannt?"
+      },
+      {
+        type: "cloze",
+        text: "Messen Sie Ihren Blutdruck ___ zu Hause?",
+        options: ["regelmäßig", "nur im Urlaub", "nur nachts", "nur beim Sport"],
+        answerIndex: 0,
+        explanation: "Regelmäßige häusliche Blutdruckmessung ist wichtig zur Beurteilung der Therapieeinstellung."
+      },
+      {
+        type: "mc",
+        question: "Welche Frage prüft mögliche Endorganschäden der Hypertonie?",
+        options: ["Haben Sie Sehstörungen, Brustschmerzen oder Luftnot bemerkt?", "Haben Sie oft Kopfschmerzen?", "Schlafen Sie gut?", "Reisen Sie oft?"],
+        answerIndex: 0,
+        explanation: "Sehstörungen, Brustschmerzen und Luftnot können auf Endorganschäden (Auge, Herz, Lunge) hinweisen."
+      },
+      {
+        type: "vocab",
+        term: "die hypertensive Krise",
+        definition: "hypertensive crisis — severely elevated blood pressure, potentially with organ damage",
+        example: "Bei Werten über 180/120 mmHg mit Symptomen sprechen wir von einer hypertensiven Krise."
+      },
+      {
+        type: "cloze",
+        text: "Nehmen Sie Ihre blutdrucksenkenden Medikamente ___ ein?",
+        options: ["regelmäßig", "nur bei Kopfschmerzen", "nie", "nur am Wochenende"],
+        answerIndex: 0,
+        explanation: "Die Therapietreue ist eine der häufigsten Ursachen für eine schlecht eingestellte Hypertonie."
+      },
+      {
+        type: "mc",
+        question: "Ein Patient mit Blutdruck 210/130 mmHg, Kopfschmerzen und Sehstörungen. Woran denken Sie zuerst?",
+        options: ["Hypertensiver Notfall", "Migräne", "Erkältung", "Muskelkater"],
+        answerIndex: 0,
+        explanation: "Stark erhöhter Blutdruck mit Symptomen einer Endorganschädigung ist ein hypertensiver Notfall."
+      },
+      {
+        type: "vocab",
+        term: "der Zielorganschaden",
+        definition: "end-organ damage — damage to organs such as the heart, kidneys, eyes, or brain caused by chronic hypertension",
+        example: "Wir untersuchen gezielt auf Zeichen eines Zielorganschadens."
+      },
+      {
+        type: "cloze",
+        text: "Gibt es in Ihrer Familie weitere Fälle von ___ oder Herz-Kreislauf-Erkrankungen?",
+        options: ["Bluthochdruck", "Migräne", "Heuschnupfen", "Muskelkater"],
+        answerIndex: 0,
+        explanation: "Die Familienanamnese ist bei essenzieller Hypertonie relevant, da eine genetische Komponente besteht."
+      },
+      {
+        type: "mc",
+        question: "Wie erklären Sie dem Patienten verständlich, warum eine gute Blutdruckeinstellung wichtig ist?",
+        options: [
+          "Ein dauerhaft hoher Blutdruck kann langfristig Herz, Nieren, Augen und Gehirn schädigen. Deshalb ist es wichtig, den Blutdruck gut einzustellen.",
+          "Blutdruck ist nicht so wichtig.",
+          "Das betrifft nur ältere Menschen.",
+          "Dazu später mehr."
+        ],
+        answerIndex: 0,
+        explanation: "Die langfristigen Folgen eines unbehandelten Bluthochdrucks sollten dem Patienten konkret erklärt werden."
+      },
+      {
+        type: "cloze",
+        text: "Wir passen Ihre Medikamente an und bitten Sie, den Blutdruck ___ zu dokumentieren.",
+        options: ["zu Hause", "nur beim Arzt", "gar nicht", "nur im Krankenhaus"],
+        answerIndex: 0,
+        explanation: "Häusliche Blutdruckprotokolle unterstützen die Therapieanpassung."
+      },
+      {
+        type: "vocab",
+        term: "die Lebensstiländerung",
+        definition: "lifestyle modification — e.g. reduced salt intake, exercise, weight loss",
+        example: "Neben Medikamenten empfehlen wir eine Lebensstiländerung mit weniger Salz und mehr Bewegung."
+      },
+      {
+        type: "mc",
+        question: "Wie prüfen Sie, ob der Patient die Wichtigkeit der Therapietreue verstanden hat?",
+        options: ["Ist Ihnen klar, warum die regelmäßige Einnahme so wichtig ist? Haben Sie noch Fragen dazu?", "Alles klar, oder?", "Nehmen Sie es einfach.", "Kein weiterer Kommentar."],
+        answerIndex: 0,
+        explanation: "Eine offene Rückfrage stellt sicher, dass der Patient die Bedeutung der Therapietreue verstanden hat."
+      }
+    ]
+  },
+  {
+    id: "an-muedigkeit-anaemie",
+    part: "anamnese",
+    topic: "Hämatologie",
+    title: "Müdigkeit & Anämie",
+    description: "Anamnese bei chronischer Müdigkeit und Verdacht auf Anämie inklusive Patientenkommunikation.",
+    pool: [
+      {
+        type: "mc",
+        question: "Wie fragen Sie nach dem Verlauf der Müdigkeit?",
+        options: ["Seit wann fühlen Sie sich ungewöhnlich müde und abgeschlagen?", "Schlafen Sie schlecht?", "Arbeiten Sie viel?", "Sind Sie gestresst?"],
+        answerIndex: 0,
+        explanation: "Der zeitliche Verlauf hilft, akute von chronischen Ursachen der Müdigkeit zu unterscheiden."
+      },
+      {
+        type: "vocab",
+        term: "die Abgeschlagenheit",
+        definition: "fatigue / lack of energy",
+        example: "Fühlen Sie sich zusätzlich zur Müdigkeit auch allgemein abgeschlagen?"
+      },
+      {
+        type: "cloze",
+        text: "Haben Sie zusätzlich zur Müdigkeit auch ___ bemerkt?",
+        options: ["Blässe oder Atemnot bei Belastung", "Juckreiz am Arm", "Halsschmerzen", "Sodbrennen"],
+        answerIndex: 0,
+        explanation: "Blässe und Belastungsdyspnoe sind typische Begleitsymptome einer Anämie."
+      },
+      {
+        type: "mc",
+        question: "Welche Frage prüft mögliche Blutungsquellen als Ursache einer Anämie?",
+        options: ["Haben Sie Blut im Stuhl bemerkt oder sehr starke Monatsblutungen?", "Essen Sie viel Fleisch?", "Trinken Sie viel Wasser?", "Sind Sie sportlich aktiv?"],
+        answerIndex: 0,
+        explanation: "Chronischer Blutverlust (gastrointestinal oder menstruell) ist die häufigste Ursache einer Eisenmangelanämie."
+      },
+      {
+        type: "vocab",
+        term: "die Blässe",
+        definition: "pallor — pale skin/mucous membranes, a sign of anemia",
+        example: "Ist Ihnen selbst eine Blässe der Haut oder der Lippen aufgefallen?"
+      },
+      {
+        type: "cloze",
+        text: "Ernähren Sie sich vegetarisch oder ___?",
+        options: ["vegan", "gemischt", "reichlich", "unregelmäßig"],
+        answerIndex: 0,
+        explanation: "Die Ernährungsanamnese ist relevant, da vegane/vegetarische Ernährung das Risiko für Eisen- oder B12-Mangel erhöhen kann."
+      },
+      {
+        type: "mc",
+        question: "Eine 32-jährige Patientin mit Müdigkeit, Blässe und sehr starken Monatsblutungen. Woran denken Sie zuerst?",
+        options: ["Eisenmangelanämie", "Hypothyreose", "Depression", "Migräne"],
+        answerIndex: 0,
+        explanation: "Starke Monatsblutungen sind eine häufige Ursache einer Eisenmangelanämie bei Frauen im gebärfähigen Alter."
+      },
+      {
+        type: "vocab",
+        term: "die Eisenmangelanämie",
+        definition: "iron deficiency anemia — the most common type of anemia, often due to chronic blood loss",
+        example: "Starke Monatsblutungen sind eine häufige Ursache einer Eisenmangelanämie."
+      },
+      {
+        type: "cloze",
+        text: "Nehmen Sie Medikamente ein, die das Blutungsrisiko ___ könnten, z. B. Blutverdünner?",
+        options: ["erhöhen", "senken", "färben", "süßen"],
+        answerIndex: 0,
+        explanation: "Antikoagulanzien und Thrombozytenaggregationshemmer erhöhen das Risiko für okkulte Blutungen."
+      },
+      {
+        type: "mc",
+        question: "Wie erklären Sie der Patientin verständlich, warum Sie einen Eisenwert und eine Magen-Darm-Abklärung veranlassen?",
+        options: [
+          "Ihre Blutwerte deuten auf einen Eisenmangel hin. Um die Ursache zu finden, möchten wir zusätzlich den Magen-Darm-Trakt untersuchen.",
+          "Sie sind einfach nur müde, das ist normal.",
+          "Das ist bestimmt nichts Ernstes.",
+          "Dazu später mehr."
+        ],
+        answerIndex: 0,
+        explanation: "Der Zweck der weiterführenden Diagnostik sollte der Patientin klar und konkret erklärt werden."
+      },
+      {
+        type: "cloze",
+        text: "Wir möchten die Ursache Ihres Eisenmangels finden und nicht nur ___ verschreiben.",
+        options: ["Eisentabletten", "Schmerzmittel", "Antibiotika", "Vitamine"],
+        answerIndex: 0,
+        explanation: "Es ist wichtig, die zugrunde liegende Ursache (z. B. eine Blutungsquelle) zu finden, statt nur die Anämie symptomatisch zu behandeln."
+      },
+      {
+        type: "vocab",
+        term: "die Substitution",
+        definition: "substitution/supplementation (e.g. of iron or vitamin B12)",
+        example: "Bei bestätigtem Eisenmangel beginnen wir mit einer oralen Substitution."
+      },
+      {
+        type: "mc",
+        question: "Wie prüfen Sie, ob die Patientin die weiteren Schritte verstanden hat?",
+        options: ["Ist Ihnen klar, warum wir zusätzlich zur Eisengabe auch die Ursache abklären möchten? Haben Sie noch Fragen?", "Alles klar, oder?", "Nehmen Sie einfach die Tabletten.", "Kein weiterer Kommentar."],
+        answerIndex: 0,
+        explanation: "Eine offene Rückfrage stellt sicher, dass die Patientin den Zusammenhang zwischen Substitution und Ursachensuche verstanden hat."
+      }
+    ]
+  },
+
   // ---------------------------------------------------------------------
   // PART 2: SCHRIFTLICHER ARZTBRIEF
   // ---------------------------------------------------------------------
@@ -1735,6 +2039,280 @@ const LESSONS = [
     ]
   },
 
+  {
+    id: "ab-oedeme-herzinsuffizienz",
+    part: "arztbrief",
+    topic: "Kardiologie",
+    title: "Ödeme & Herzinsuffizienz",
+    description: "Formulierungen für den Arztbrief bei dekompensierter Herzinsuffizienz.",
+    pool: [
+      {
+        type: "cloze",
+        text: "Der Patient stellte sich mit seit zwei Wochen progredienten ___ und Belastungsdyspnoe vor.",
+        options: ["Beinödemen", "Kopfschmerzen", "Bauchschmerzen", "Gelenkschmerzen"],
+        answerIndex: 0,
+        explanation: "Der Einleitungssatz benennt Dauer, Verlauf und Leitsymptome."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie den Untersuchungsbefund bei Beinödemen?",
+        options: [
+          "Es zeigten sich beidseits eindrückbare Unterschenkelödeme bis zur Mitte des Unterschenkels.",
+          "Beine waren dick.",
+          "Ödeme: ja, schlimm.",
+          "Er hatte geschwollene Füße."
+        ],
+        answerIndex: 0,
+        explanation: "Der Ödembefund wird mit Ausprägung (eindrückbar) und genauer Höhenangabe dokumentiert."
+      },
+      {
+        type: "vocab",
+        term: "das Unterschenkelödem",
+        definition: "lower leg edema",
+        example: "Es zeigten sich beidseits eindrückbare Unterschenkelödeme."
+      },
+      {
+        type: "cloze",
+        text: "Laborchemisch zeigte sich ein erhöhtes ___, vereinbar mit einer Herzinsuffizienz.",
+        options: ["NT-proBNP", "Kreatinin", "Bilirubin", "Kalium"],
+        answerIndex: 0,
+        explanation: "NT-proBNP ist ein zentraler Laborparameter zur Bestätigung einer Herzinsuffizienz."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie den echokardiographischen Befund?",
+        options: [
+          "Echokardiographisch zeigte sich eine deutlich eingeschränkte linksventrikuläre Ejektionsfraktion von 30 %.",
+          "Das Herz war schwach im Ultraschall.",
+          "Herz: schlecht.",
+          "Ultraschall zeigte Probleme."
+        ],
+        answerIndex: 0,
+        explanation: "Bildgebende Befunde werden mit konkreten Messwerten dokumentiert."
+      },
+      {
+        type: "vocab",
+        term: "die Ejektionsfraktion",
+        definition: "ejection fraction — a measure of the heart's pumping efficiency",
+        example: "Die linksventrikuläre Ejektionsfraktion betrug 30 %."
+      },
+      {
+        type: "cloze",
+        text: "Wir leiteten eine leitliniengerechte Herzinsuffizienztherapie mit ACE-Hemmer, Betablocker und ___ ein.",
+        options: ["Diuretikum", "Antibiotikum", "Insulin", "Schmerzmittel"],
+        answerIndex: 0,
+        explanation: "Die leitliniengerechte Herzinsuffizienztherapie umfasst typischerweise diese Substanzklassen."
+      },
+      {
+        type: "mc",
+        question: "Wie schließen Sie den Arztbrief ab?",
+        options: [
+          "Wir bitten um tägliche Gewichtskontrolle sowie Wiedervorstellung bei rascher Gewichtszunahme oder Verschlechterung der Symptomatik.",
+          "Er soll sich wiegen, irgendwann.",
+          "Mal schauen, wie es wird.",
+          "Alles wird gut."
+        ],
+        answerIndex: 0,
+        explanation: "Konkrete Selbstüberwachungsmaßnahmen und Warnzeichen gehören in den Abschluss des Arztbriefs."
+      },
+      {
+        type: "vocab",
+        term: "die Rekompensation",
+        definition: "recompensation — restoring a patient with heart failure to a stable, fluid-balanced state",
+        example: "Unter diuretischer Therapie kam es zu einer guten Rekompensation."
+      },
+      {
+        type: "cloze",
+        text: "Wir empfehlen eine ambulante kardiologische ___ zur Therapieoptimierung.",
+        options: ["Anbindung", "Einladung", "Rechnung", "Terminabsage"],
+        answerIndex: 0,
+        explanation: "Standardformulierung zur Empfehlung einer fachärztlichen Weiterbetreuung."
+      }
+    ]
+  },
+  {
+    id: "ab-hypertonie",
+    part: "arztbrief",
+    topic: "Kardiologie",
+    title: "Hypertonie",
+    description: "Formulierungen für den Arztbrief bei unzureichend eingestelltem Bluthochdruck.",
+    pool: [
+      {
+        type: "cloze",
+        text: "Der Patient stellte sich mit seit Jahren bekanntem, unzureichend eingestelltem ___ vor.",
+        options: ["arteriellen Hypertonus", "Diabetes mellitus", "Asthma bronchiale", "Vorhofflimmern"],
+        answerIndex: 0,
+        explanation: "Der Einleitungssatz benennt die bekannte Vorerkrankung und ihren aktuellen Kontrollstatus."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie die Blutdruckwerte bei Aufnahme?",
+        options: [
+          "Bei Aufnahme zeigte sich ein Blutdruck von 190/110 mmHg.",
+          "Blutdruck war hoch.",
+          "Er hatte Bluthochdruck, ziemlich schlimm.",
+          "Werte: schlecht."
+        ],
+        answerIndex: 0,
+        explanation: "Vitalparameter werden im Arztbrief immer mit konkreten Zahlenwerten dokumentiert."
+      },
+      {
+        type: "vocab",
+        term: "der Hypertonus",
+        definition: "hypertension (formal medical documentation term)",
+        example: "Anamnestisch ist ein arterieller Hypertonus seit zehn Jahren bekannt."
+      },
+      {
+        type: "cloze",
+        text: "Laborchemisch und funktionell zeigten sich keine Hinweise auf einen relevanten ___.",
+        options: ["Zielorganschaden", "Infekt", "Tumor", "Bruch"],
+        answerIndex: 0,
+        explanation: "Auch unauffällige Befunde werden als relevante Negativbefunde dokumentiert."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie die eingeleitete antihypertensive Therapie?",
+        options: [
+          "Wir leiteten eine antihypertensive Kombinationstherapie mit einem ACE-Hemmer und einem Diuretikum ein.",
+          "Er hat jetzt Blutdrucktabletten bekommen.",
+          "Therapie: Blutdruck runter.",
+          "Wir haben was gegen den Druck gegeben."
+        ],
+        answerIndex: 0,
+        explanation: "Die Therapie wird mit konkreten Substanzklassen benannt."
+      },
+      {
+        type: "vocab",
+        term: "die Kombinationstherapie",
+        definition: "combination therapy — using two or more drug classes together",
+        example: "Bei unzureichender Blutdruckkontrolle unter Monotherapie empfehlen wir eine Kombinationstherapie."
+      },
+      {
+        type: "cloze",
+        text: "Wir empfehlen eine regelmäßige häusliche ___ zur Therapiekontrolle.",
+        options: ["Blutdruckmessung", "Blutzuckermessung", "Gewichtskontrolle", "Temperaturmessung"],
+        answerIndex: 0,
+        explanation: "Häusliche Blutdruckmessung ist Standard zur Verlaufsbeurteilung bei Hypertonie."
+      },
+      {
+        type: "mc",
+        question: "Wie schließen Sie den Arztbrief ab?",
+        options: [
+          "Wir bitten um Wiedervorstellung in vier Wochen zur Therapiekontrolle und Anpassung der Medikation.",
+          "Er soll wiederkommen, irgendwann.",
+          "Mal schauen, wie der Druck wird.",
+          "Alles wird gut."
+        ],
+        answerIndex: 0,
+        explanation: "Ein konkreter Zeitrahmen für die Wiedervorstellung gehört in den Abschluss des Arztbriefs."
+      },
+      {
+        type: "vocab",
+        term: "die Therapieadhärenz",
+        definition: "treatment adherence",
+        example: "Wir besprachen ausführlich die Bedeutung einer guten Therapieadhärenz."
+      },
+      {
+        type: "cloze",
+        text: "Bei Verdacht auf eine sekundäre Hypertonieursache empfehlen wir eine ___ Abklärung.",
+        options: ["endokrinologische", "dermatologische", "orthopädische", "HNO-ärztliche"],
+        answerIndex: 0,
+        explanation: "Sekundäre Hypertonieursachen (z. B. hormonell) werden endokrinologisch abgeklärt."
+      }
+    ]
+  },
+  {
+    id: "ab-muedigkeit-anaemie",
+    part: "arztbrief",
+    topic: "Hämatologie",
+    title: "Müdigkeit & Anämie",
+    description: "Formulierungen für den Arztbrief bei Eisenmangelanämie.",
+    pool: [
+      {
+        type: "cloze",
+        text: "Die Patientin stellte sich mit seit Wochen bestehender ___ und Belastungsdyspnoe vor.",
+        options: ["Müdigkeit", "Übelkeit", "Schwellung", "Rötung"],
+        answerIndex: 0,
+        explanation: "Der Einleitungssatz benennt Dauer und Leitsymptome."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie den klinischen Befund einer Blässe?",
+        options: [
+          "Klinisch zeigte sich eine deutliche Blässe der Haut und Schleimhäute.",
+          "Sie sah blass aus.",
+          "Blässe: ja.",
+          "Haut war komisch hell."
+        ],
+        answerIndex: 0,
+        explanation: "Klinische Befunde werden fachsprachlich und präzise formuliert."
+      },
+      {
+        type: "vocab",
+        term: "die Schleimhautblässe",
+        definition: "pallor of the mucous membranes",
+        example: "Klinisch zeigte sich eine deutliche Schleimhautblässe."
+      },
+      {
+        type: "cloze",
+        text: "Laborchemisch zeigte sich eine ___ mit erniedrigtem Ferritin, vereinbar mit einer Eisenmangelanämie.",
+        options: ["mikrozytäre Anämie", "Leukozytose", "Thrombozytose", "Hyperglykämie"],
+        answerIndex: 0,
+        explanation: "Die mikrozytäre Anämie mit erniedrigtem Ferritin ist typisch für einen Eisenmangel."
+      },
+      {
+        type: "mc",
+        question: "Wie formulieren Sie die geplante weitere Diagnostik?",
+        options: [
+          "Zur Abklärung der Blutungsquelle empfehlen wir eine Gastro- und Koloskopie.",
+          "Wir schauen mal in den Bauch rein.",
+          "Magen und Darm werden untersucht, irgendwie.",
+          "Diagnostik: Bauch."
+        ],
+        answerIndex: 0,
+        explanation: "Die geplante Diagnostik wird mit konkreten Untersuchungsmethoden benannt."
+      },
+      {
+        type: "vocab",
+        term: "das Ferritin",
+        definition: "ferritin — a protein that stores iron; low levels indicate iron deficiency",
+        example: "Das erniedrigte Ferritin bestätigt die Eisenmangelanämie."
+      },
+      {
+        type: "cloze",
+        text: "Wir begannen eine orale Eisensubstitution und empfehlen eine Verlaufskontrolle des ___ in vier Wochen.",
+        options: ["Blutbildes", "Blutzuckers", "Blutdrucks", "Körpergewichts"],
+        answerIndex: 0,
+        explanation: "Eine Verlaufskontrolle des Blutbildes prüft das Ansprechen der Eisensubstitution."
+      },
+      {
+        type: "mc",
+        question: "Wie schließen Sie den Arztbrief ab?",
+        options: [
+          "Wir bitten um Wiedervorstellung nach abgeschlossener gastroenterologischer Diagnostik zur Befundbesprechung.",
+          "Sie soll wiederkommen, irgendwann.",
+          "Mal schauen, wie es wird.",
+          "Alles wird gut."
+        ],
+        answerIndex: 0,
+        explanation: "Der Abschluss sollte eine klare Handlungsempfehlung mit Bezug auf die weitere Diagnostik enthalten."
+      },
+      {
+        type: "vocab",
+        term: "die Koloskopie",
+        definition: "colonoscopy",
+        example: "Zum Ausschluss einer gastrointestinalen Blutungsquelle wurde eine Koloskopie vereinbart."
+      },
+      {
+        type: "cloze",
+        text: "Wir empfehlen eine gynäkologische Mitbeurteilung bei Verdacht auf ___ als Blutungsursache.",
+        options: ["Menorrhagie", "Migräne", "Hypertonie", "Diabetes"],
+        answerIndex: 0,
+        explanation: "Bei Frauen im gebärfähigen Alter sollte auch eine gynäkologische Blutungsursache berücksichtigt werden."
+      }
+    ]
+  },
+
   // ---------------------------------------------------------------------
   // PART 3: FACHGESPRÄCH
   // ---------------------------------------------------------------------
@@ -2437,6 +3015,259 @@ const LESSONS = [
         ],
         answerIndex: 0,
         explanation: "Die septische Arthritis muss als gefährlichste Differenzialdiagnose bei akuter, fieberhafter Monarthritis immer bedacht werden."
+      }
+    ]
+  },
+  {
+    id: "fg-oedeme-herzinsuffizienz",
+    part: "fachgespraech",
+    topic: "Kardiologie",
+    title: "Ödeme & Herzinsuffizienz",
+    description: "Differenzialdiagnose und Vorgehen bei dekompensierter Herzinsuffizienz.",
+    pool: [
+      {
+        type: "mc",
+        question: "Ein 68-jähriger Patient mit progredienten Beinödemen, Gewichtszunahme und Orthopnoe. Wichtigste Verdachtsdiagnose?",
+        options: ["Dekompensierte Herzinsuffizienz", "Nierensteine", "Migräne", "Muskelkater"],
+        answerIndex: 0,
+        explanation: "Beinödeme, Gewichtszunahme und Orthopnoe sind klassisch für eine dekompensierte Herzinsuffizienz."
+      },
+      {
+        type: "vocab",
+        term: "die Dekompensation",
+        definition: "decompensation — acute worsening of a chronic condition, e.g. heart failure, with fluid overload",
+        example: "Der Patient stellt sich mit einer kardialen Dekompensation vor."
+      },
+      {
+        type: "mc",
+        question: "Welches Vorgehen ist bei Verdacht auf eine dekompensierte Herzinsuffizienz am sinnvollsten?",
+        options: ["Labor mit NT-proBNP, Röntgen-Thorax, Echokardiographie", "Nur ein Röntgen des Knies", "Nur eine Urinuntersuchung", "Nur ein Hörtest"],
+        answerIndex: 0,
+        explanation: "NT-proBNP, Röntgen-Thorax und Echokardiographie bilden die diagnostische Basis bei Verdacht auf Herzinsuffizienz."
+      },
+      {
+        type: "cloze",
+        text: "Ein erhöhter ___-Wert unterstützt die Diagnose einer Herzinsuffizienz.",
+        options: ["NT-proBNP", "HbA1c", "PSA", "TSH"],
+        answerIndex: 0,
+        explanation: "NT-proBNP ist ein zentraler Laborparameter bei Verdacht auf Herzinsuffizienz."
+      },
+      {
+        type: "vocab",
+        term: "die Stauungslunge",
+        definition: "pulmonary congestion — fluid buildup in the lungs due to heart failure",
+        example: "Im Röntgen-Thorax zeigten sich Zeichen einer Stauungslunge."
+      },
+      {
+        type: "mc",
+        question: "Welche Differenzialdiagnose sollten Sie bei beidseitigen Beinödemen zusätzlich zur Herzinsuffizienz nennen?",
+        options: ["Niereninsuffizienz und Leberzirrhose", "Migräne und Sodbrennen", "Rückenschmerzen und Muskelkater", "Erkältung und Heuschnupfen"],
+        answerIndex: 0,
+        explanation: "Niereninsuffizienz und Leberzirrhose sind wichtige nicht-kardiale Ursachen beidseitiger Beinödeme."
+      },
+      {
+        type: "cloze",
+        text: "Bei akuter Dekompensation behandeln wir zunächst mit intravenösen ___ zur Ausschwemmung.",
+        options: ["Diuretika", "Antibiotika", "Insulin", "Schmerzmitteln"],
+        answerIndex: 0,
+        explanation: "Intravenöse Diuretika sind die Basistherapie der akut dekompensierten Herzinsuffizienz."
+      },
+      {
+        type: "mc",
+        question: "Wie präsentieren Sie den Fall professionell?",
+        options: [
+          "Aufgrund der progredienten Beinödeme, Orthopnoe und des erhöhten NT-proBNP gehe ich am ehesten von einer dekompensierten Herzinsuffizienz aus.",
+          "Er hat halt dicke Beine.",
+          "Vielleicht Herz, vielleicht Nieren.",
+          "Keine Ahnung, was es ist."
+        ],
+        answerIndex: 0,
+        explanation: "Eine strukturierte Präsentation nennt Befunde, Laborwerte und die daraus abgeleitete Verdachtsdiagnose."
+      },
+      {
+        type: "vocab",
+        term: "die Auskultation",
+        definition: "auscultation — listening to internal sounds (e.g. lungs, heart) with a stethoscope",
+        example: "Bei der Auskultation der Lunge zeigten sich beidseits feuchte Rasselgeräusche."
+      },
+      {
+        type: "mc",
+        question: "Der Oberarzt fragt: „Welche Ursachen einer Herzinsuffizienz sollten Sie abklären?“ Wie antworten Sie?",
+        options: ["Koronare Herzkrankheit, Hypertonie, Klappenerkrankungen und Rhythmusstörungen.", "Nur das Alter zählt.", "Es gibt keine bekannten Ursachen.", "Herzinsuffizienz hat immer die gleiche Ursache."],
+        answerIndex: 0,
+        explanation: "Eine gute Antwort nennt die häufigsten zugrunde liegenden Ursachen einer Herzinsuffizienz."
+      }
+    ]
+  },
+  {
+    id: "fg-hypertonie",
+    part: "fachgespraech",
+    topic: "Kardiologie",
+    title: "Hypertonie",
+    description: "Differenzialdiagnose und Vorgehen bei hypertensivem Notfall und schwer einstellbarer Hypertonie.",
+    pool: [
+      {
+        type: "mc",
+        question: "Ein Patient mit Blutdruck 220/130 mmHg, starken Kopfschmerzen und Sehstörungen. Wichtigste Verdachtsdiagnose?",
+        options: ["Hypertensiver Notfall", "Migräne", "Spannungskopfschmerz", "Erkältung"],
+        answerIndex: 0,
+        explanation: "Stark erhöhter Blutdruck mit Symptomen einer Endorganschädigung definiert den hypertensiven Notfall."
+      },
+      {
+        type: "vocab",
+        term: "der hypertensive Notfall",
+        definition: "hypertensive emergency — severely elevated blood pressure with acute end-organ damage",
+        example: "Bei Sehstörungen und stark erhöhtem Blutdruck besteht der Verdacht auf einen hypertensiven Notfall."
+      },
+      {
+        type: "mc",
+        question: "Welches Vorgehen ist bei Verdacht auf einen hypertensiven Notfall am wichtigsten?",
+        options: [
+          "Kontrollierte, zügige aber nicht zu schnelle Blutdrucksenkung unter stationärer Überwachung",
+          "Sofortige maximale Blutdrucksenkung ambulant",
+          "Abwarten ohne Therapie",
+          "Nur Schmerzmittel geben"
+        ],
+        answerIndex: 0,
+        explanation: "Die Blutdrucksenkung muss kontrolliert erfolgen, um eine zerebrale Minderperfusion zu vermeiden."
+      },
+      {
+        type: "cloze",
+        text: "Eine zu ___ Blutdrucksenkung kann eine zerebrale Minderperfusion verursachen.",
+        options: ["schnelle", "langsame", "gar keine", "leichte"],
+        answerIndex: 0,
+        explanation: "Eine zu rasche Blutdrucksenkung ist beim hypertensiven Notfall gefährlich."
+      },
+      {
+        type: "vocab",
+        term: "die zerebrale Minderperfusion",
+        definition: "cerebral hypoperfusion — reduced blood flow to the brain",
+        example: "Eine zu schnelle Blutdrucksenkung kann eine zerebrale Minderperfusion verursachen."
+      },
+      {
+        type: "mc",
+        question: "Welche Differenzialdiagnose sollten Sie bei starkem Bluthochdruck bei einem jungen Patienten in Betracht ziehen?",
+        options: ["Sekundäre Hypertonie (z. B. renal, endokrin)", "Nur primäre Hypertonie", "Migräne", "Muskelkater"],
+        answerIndex: 0,
+        explanation: "Bei jungen Patienten mit schwerer Hypertonie sollte eine sekundäre Ursache aktiv gesucht werden."
+      },
+      {
+        type: "cloze",
+        text: "Bei jungen Patienten mit schwer einstellbarer Hypertonie sollte eine ___ Ursache ausgeschlossen werden.",
+        options: ["sekundäre", "rein psychische", "virale", "allergische"],
+        answerIndex: 0,
+        explanation: "Sekundäre Hypertonieformen (z. B. renal, endokrin) sind bei jungen Patienten häufiger als angenommen."
+      },
+      {
+        type: "mc",
+        question: "Wie präsentieren Sie den Fall professionell?",
+        options: [
+          "Aufgrund des stark erhöhten Blutdrucks mit Sehstörungen und Kopfschmerzen gehe ich von einem hypertensiven Notfall mit Zielorganschädigung aus.",
+          "Blutdruck ist halt hoch.",
+          "Vielleicht Notfall, vielleicht nicht.",
+          "Keine Ahnung, was es ist."
+        ],
+        answerIndex: 0,
+        explanation: "Eine strukturierte Präsentation nennt Befunde und die daraus abgeleitete Verdachtsdiagnose."
+      },
+      {
+        type: "vocab",
+        term: "die Endorganschädigung",
+        definition: "end-organ damage",
+        example: "Beim hypertensiven Notfall steht die akute Endorganschädigung im Vordergrund."
+      },
+      {
+        type: "mc",
+        question: "Der Oberarzt fragt: „Welche Organe sind bei einem hypertensiven Notfall besonders gefährdet?“ Wie antworten Sie?",
+        options: ["Gehirn, Herz, Nieren und Augen.", "Nur die Haut.", "Nur die Muskeln.", "Keine Organe sind gefährdet."],
+        answerIndex: 0,
+        explanation: "Eine gute Antwort nennt die klassischen Zielorgane einer hypertensiven Endorganschädigung vollständig."
+      }
+    ]
+  },
+  {
+    id: "fg-muedigkeit-anaemie",
+    part: "fachgespraech",
+    topic: "Hämatologie",
+    title: "Müdigkeit & Anämie",
+    description: "Differenzialdiagnose und Vorgehen bei chronischer Müdigkeit und Anämie.",
+    pool: [
+      {
+        type: "mc",
+        question: "Eine 32-jährige Patientin mit Müdigkeit, Blässe und starken Monatsblutungen. Wichtigste Verdachtsdiagnose?",
+        options: ["Eisenmangelanämie", "Hypothyreose", "Depression", "Migräne"],
+        answerIndex: 0,
+        explanation: "Starke Monatsblutungen sind eine häufige Ursache einer Eisenmangelanämie."
+      },
+      {
+        type: "vocab",
+        term: "die mikrozytäre Anämie",
+        definition: "microcytic anemia — anemia with smaller-than-normal red blood cells, typically from iron deficiency",
+        example: "Im Blutbild zeigte sich eine mikrozytäre, hypochrome Anämie."
+      },
+      {
+        type: "mc",
+        question: "Welches Vorgehen ist bei Verdacht auf eine Eisenmangelanämie am sinnvollsten?",
+        options: ["Blutbild, Ferritin, ggf. Gastro- und Koloskopie zur Ursachensuche", "Nur ein EKG", "Nur eine Urinuntersuchung", "Nur ein Röntgen des Knies"],
+        answerIndex: 0,
+        explanation: "Neben Blutbild und Ferritin muss bei Eisenmangelanämie immer nach der Blutungsquelle gesucht werden."
+      },
+      {
+        type: "cloze",
+        text: "Ein erniedrigter ___-Wert bestätigt eine Eisenmangelanämie.",
+        options: ["Ferritin", "HbA1c", "PSA", "TSH"],
+        answerIndex: 0,
+        explanation: "Ferritin ist der spezifischste Laborparameter zur Bestätigung eines Eisenmangels."
+      },
+      {
+        type: "vocab",
+        term: "die perniziöse Anämie",
+        definition: "pernicious anemia — vitamin B12 deficiency anemia due to impaired absorption",
+        example: "Bei megaloblastärer Anämie denken wir auch an eine perniziöse Anämie durch Vitamin-B12-Mangel."
+      },
+      {
+        type: "mc",
+        question: "Welche Differenzialdiagnose sollten Sie bei Müdigkeit und Anämie zusätzlich zur Eisenmangelanämie nennen?",
+        options: ["Vitamin-B12- oder Folsäuremangel und chronische Erkrankungen", "Nur Eisenmangel", "Migräne", "Muskelkater"],
+        answerIndex: 0,
+        explanation: "Anämie kann viele Ursachen haben, u. a. Vitamin-B12-/Folsäuremangel oder chronische Erkrankungen."
+      },
+      {
+        type: "cloze",
+        text: "Bei Verdacht auf eine gastrointestinale Blutungsquelle veranlassen wir eine Gastro- und ___.",
+        options: ["Koloskopie", "Bronchoskopie", "Zystoskopie", "Arthroskopie"],
+        answerIndex: 0,
+        explanation: "Gastro- und Koloskopie sind die Standarduntersuchungen zur Suche nach einer gastrointestinalen Blutungsquelle."
+      },
+      {
+        type: "mc",
+        question: "Wie präsentieren Sie den Fall professionell?",
+        options: [
+          "Aufgrund der mikrozytären Anämie mit erniedrigtem Ferritin bei bekannten starken Monatsblutungen gehe ich am ehesten von einer Eisenmangelanämie aus.",
+          "Sie ist halt müde.",
+          "Vielleicht Anämie, vielleicht nicht.",
+          "Keine Ahnung, was es ist."
+        ],
+        answerIndex: 0,
+        explanation: "Eine strukturierte Präsentation nennt Laborbefunde, Anamnese und die daraus abgeleitete Verdachtsdiagnose."
+      },
+      {
+        type: "vocab",
+        term: "die Substitutionstherapie",
+        definition: "replacement/supplementation therapy",
+        example: "Wir beginnen eine Substitutionstherapie mit oralem Eisen."
+      },
+      {
+        type: "mc",
+        question: "Der Oberarzt fragt: „Wann sollte man bei Eisenmangelanämie zwingend eine endoskopische Abklärung veranlassen?“ Wie antworten Sie?",
+        options: [
+          "Bei Männern und postmenopausalen Frauen immer, um eine gastrointestinale Blutungsquelle wie ein Karzinom auszuschließen.",
+          "Nie, das ist nicht nötig.",
+          "Nur bei Kindern.",
+          "Nur wenn der Patient danach fragt."
+        ],
+        answerIndex: 0,
+        explanation: "Bei Männern und postmenopausalen Frauen ist eine Eisenmangelanämie bis zum Beweis des Gegenteils durch eine gastrointestinale Blutung verursacht und muss endoskopisch abgeklärt werden."
       }
     ]
   }
